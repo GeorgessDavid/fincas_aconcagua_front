@@ -14,8 +14,6 @@ dist-ssr
 public/*.mp4
 /public/*.mp4
 
-public/*.mp4
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
