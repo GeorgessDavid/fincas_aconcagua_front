@@ -3,7 +3,7 @@ export const Header = () => {
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Lotes</a></li>
+                    <li><a href="#lotes">Lotes</a></li>
                     <li><a href="#">Galería</a></li>
                     <li><a href="#">Novedades</a></li>
                 </ul>
