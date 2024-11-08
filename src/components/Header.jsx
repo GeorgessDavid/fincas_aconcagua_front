@@ -1,6 +1,24 @@
+import { useState, useEffect } from 'react';
+
 export const Header = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 870) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    })
+    
     return (
-        <header>
+        <header className={scrolled ? 'scrolled' : null}>
             <nav>
                 <ul>
                     <li><a href="#lotes">Lotes</a></li>
