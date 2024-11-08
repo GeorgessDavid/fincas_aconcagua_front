@@ -21,8 +21,8 @@ export const Header = () => {
         <header className={scrolled ? 'scrolled' : null}>
             <nav>
                 <ul>
-                    <li><a href="#lotes">Lotes</a></li>
-                    <li><a href="#">Galería</a></li>
+                    <li><a href="/#lotes">Lotes</a></li>
+                    <li><a href="/#galeria">Galería</a></li>
                     <li><a href="#">Novedades</a></li>
                 </ul>
             </nav>

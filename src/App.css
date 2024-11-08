@@ -1,12 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  font-size:16px;
 }
 
 body {
@@ -91,7 +94,6 @@ video{
 }
 
 section{
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +103,7 @@ section{
 section h2{
   width: 100%;
   text-align: start;
-  margin-bottom: 1rem;
+  padding: 5.125rem 2rem 1rem;
   font-size: 2rem;
   text-transform: uppercase;
   color: #005725;
@@ -150,4 +152,39 @@ section p li{
 
 .whatsapp-button:hover svg{
   text-shadow: 0 0 5px white;
+}
+
+.galery-container{
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galery-container img{
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 10;
+  margin: 0.25rem;
+  transition: all 300ms ease-in;
+}
+
+.galery-container img:hover{
+  transform: scale(1.025);
+  z-index: 300;
+}
+
+.galery-container:hover > :not(:hover){
+  filter: blur(2px);
+  opacity: 0.75;
+}
+
+.image-opened{
+  width: auto !important;
+  height: 85vh !important;
+  object-fit: none !important;
+  cursor: default !important;
 }

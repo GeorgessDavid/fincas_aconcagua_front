@@ -6,7 +6,6 @@ export const Lotes = () => {
             <p>
                 Características principales:
                 <br />
-            
                     <li>Lotes desde 1000 m², diseñados para brindarte privacidad y espacio.</li>
                     <li>Ubicación privilegiada en una zona residencial vecina de barrios cerrados.</li>
                     <li>Infraestructura confiable con tendido eléctrico de EDENOR.</li>
