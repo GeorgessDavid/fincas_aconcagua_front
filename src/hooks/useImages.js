@@ -9,7 +9,7 @@ export const useImages = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch('http://localhost:3000/images');
+                const response = await fetch('https://api.fincasdeaconcagua.com.ar/images');
                 const data = await response.json();
                 setImages(data.images);
                 setCount(data.count)
