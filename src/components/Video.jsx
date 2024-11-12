@@ -7,7 +7,7 @@ export const Video = () => {
                 <span>Viví la tranquilidad que merecés</span>
             </div>
             <video
-                src="/fincas_video.mp4"
+                src="https://media.fincasdeaconcagua.com.ar/main_video.mp4"
                 autoPlay
                 loop
                 muted

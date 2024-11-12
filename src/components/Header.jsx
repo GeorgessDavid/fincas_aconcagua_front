@@ -16,20 +16,18 @@ export const Header = () => {
             window.removeEventListener('scroll', handleScroll);
         }
     })
-    
+
     return (
         <header className={scrolled ? 'scrolled' : null}>
             <nav>
                 <ul>
                     <li><a href="/#lotes">Lotes</a></li>
                     <li><a href="/#galeria">Galería</a></li>
-                    <li><a href="#">Novedades</a></li>
                 </ul>
             </nav>
-            <a href='#'><img src='/fincas_cut.svg' /></a>
+            <a href='/'><img src='/fincas_cut.svg' /></a>
             <nav>
                 <ul>
-                    <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Contacto</a></li>
                     <li><a href="#">Ubicación</a></li>
                 </ul>
