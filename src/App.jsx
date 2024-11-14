@@ -3,6 +3,7 @@ import { Video } from './components/Video';
 import { Lotes } from './components/Lotes';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { Galeria } from './components/Galery';
+import { Contact } from './components/Contact';
 import './App.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Lotes />
       <WhatsAppButton />
       <Galeria />
+      <Contact />
     </>
   )
 }

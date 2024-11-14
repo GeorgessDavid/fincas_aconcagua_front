@@ -28,7 +28,7 @@ export const Header = () => {
             <a href='/'><img src='/fincas_cut.svg' /></a>
             <nav>
                 <ul>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
                     <li><a href="#">Ubicación</a></li>
                 </ul>
             </nav>
