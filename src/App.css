@@ -1,10 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-html{
+html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   background-color: #f5f5f5;
 }
 
-header{
+header {
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ header{
   transition: all 300ms ease-in;
 }
 
-header img{
+header img {
   width: 150px;
   margin: 0.5rem;
 }
@@ -38,12 +38,12 @@ header nav ul {
   justify-content: center;
 }
 
-header nav ul li{
+header nav ul li {
   list-style: none;
   margin: 0 1.5rem;
 }
 
-header nav ul li a{
+header nav ul li a {
   text-decoration: none;
   font-weight: bold;
   color: #005725;
@@ -52,22 +52,22 @@ header nav ul li a{
 }
 
 
-header nav ul li a:hover{
+header nav ul li a:hover {
   color: #000000;
   text-shadow: 0 0 5px #797979;
 }
 
-video{
+video {
   clip-path: inset(50px 0 50px 0);
   position: relative;
-  bottom:50px;
+  bottom: 50px;
 }
 
-.video-container{
+.video-container {
   position: relative;
 }
 
-.video-text{
+.video-text {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -78,7 +78,7 @@ video{
   width: 75%;
 }
 
-.video-text h1{
+.video-text h1 {
   font-size: 5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -86,12 +86,12 @@ video{
   padding-bottom: 0.5rem;
 }
 
-.video-text span{
+.video-text span {
   font-size: 2rem;
   font-weight: 300;
 }
 
-.video-text-background{
+.video-text-background {
   background-color: #212526;
   position: absolute;
   width: 100%;
@@ -100,7 +100,7 @@ video{
   opacity: 0.2;
 }
 
-section{
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +108,7 @@ section{
   padding: 0 0 2rem 0;
 }
 
-section h2{
+section h2 {
   width: 100%;
   text-align: start;
   padding: 5.125rem 2rem 1rem;
@@ -118,30 +118,30 @@ section h2{
   border-bottom: 2px solid #005725;
 }
 
-.lotes-img{
+.lotes-img {
   width: 55%;
   margin: 2rem;
 }
 
-section p{
+section p {
   width: 55%;
   text-align: justify;
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
 
-section p li{
+section p li {
   list-style: none;
   margin: 0.5rem 1rem;
 }
 
-.scrolled{
+.scrolled {
   background-color: white;
   backdrop-filter: none;
   box-shadow: 0 2px 5px grey;
 }
 
-.whatsapp-button{
+.whatsapp-button {
   background-color: #005725;
   color: white;
   padding: 1rem;
@@ -154,15 +154,15 @@ section p li{
   transition: all 300ms ease-in;
 }
 
-.whatsapp-button:hover{
+.whatsapp-button:hover {
   background-color: #007e3b;
 }
 
-.whatsapp-button:hover svg{
+.whatsapp-button:hover svg {
   text-shadow: 0 0 5px white;
 }
 
-.galery-container{
+.galery-container {
   margin: 1rem;
   display: flex;
   flex-direction: row;
@@ -170,7 +170,7 @@ section p li{
   flex-wrap: wrap;
 }
 
-.galery-container img{
+.galery-container img {
   width: 350px;
   height: 350px;
   object-fit: cover;
@@ -180,17 +180,17 @@ section p li{
   transition: all 300ms ease-in;
 }
 
-.galery-container img:hover{
+.galery-container img:hover {
   transform: scale(1.025);
   z-index: 300;
 }
 
-.galery-container:hover > :not(:hover){
+.galery-container:hover> :not(:hover) {
   filter: blur(2px);
   opacity: 0.75;
 }
 
-.image-opened{
+.image-opened {
   width: auto !important;
   height: 85vh !important;
   object-fit: contain !important;
@@ -211,7 +211,7 @@ section p li{
   justify-content: space-around;
 }
 
-.form-container{
+.form-container {
   width: 50%;
   min-width: 50%;
   display: flex;
@@ -219,16 +219,17 @@ section p li{
   align-items: center;
 }
 
-.button-section{
+.button-section {
   width: 35vw;
+  margin: 1rem 0;
 }
 
-.contact-span{
+.contact-span {
   font-style: italic;
   font-size: 0.875rem;
 }
 
-.contact-text{
+.contact-text {
   width: 60%;
   text-align: center;
   margin: 1rem;
@@ -236,6 +237,71 @@ section p li{
 
 }
 
-.contact-text p{
+.contact-text p {
   font-style: italic;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  top: 0px;
+  z-index: 50000;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading svg {
+  width: 50%;
+  height: 50%;
+  transition: all 300ms;
+  animation: grow 2s infinite;
+}
+
+.loading span {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 5rem;
+}
+
+.loading span.custom::after {
+  color: #005725;
+  content: 'Cargando';
+  transition: all 300ms ease-in;
+  animation: loading 3s infinite;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading {
+  0% {
+    content: 'Cargando';
+  }
+
+  30% {
+    content: 'Cargando.';
+  }
+
+  60% {
+    content: 'Cargando..';
+  }
+
+  90% {
+    content: 'Cargando...';
+  }
 }
