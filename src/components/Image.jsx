@@ -14,7 +14,7 @@ export const Image = ({ alt, srcSet }) => {
                 open={open}
                 onClick={handleClose}
                 sx={(theme) => ({
-                    backgroundColor: '#212526d3', zIndex: theme.zIndex.drawer + 1
+                    backgroundColor: '#212526d3', zIndex: theme.zIndex.drawer + 1000
                 })}
             >
                 <img className="image-opened" alt={alt} srcSet={srcSet} />
