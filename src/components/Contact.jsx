@@ -23,6 +23,13 @@ export const Contact = () => {
                     Enviar
                 </LoadingButton>
             </div>
+            <div>
+                <p>
+                En Fincas de Aconcagua, estamos aquí para ayudarte a dar el próximo paso hacia una vida tranquila y en armonía con la naturaleza. Ya sea que quieras conocer más detalles sobre los lotes disponibles, el proceso de adquisición, o simplemente necesitas más información sobre el proyecto, nuestro equipo está a tu disposición.
+
+Completa el formulario de contacto, y uno de nuestros asesores se pondrá en contacto contigo a la brevedad para responder todas tus preguntas. También puedes comunicarte directamente por teléfono o correo electrónico. ¡Estamos emocionados de ser parte de esta nueva etapa en tu vida!
+                </p>
+            </div>
         </section>
     )
 }

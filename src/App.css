@@ -206,9 +206,8 @@ section p li{
 }
 
 #contacto div {
-  width: 25vw;
+  width: 25vw
 }
-
 #contacto button {
   float: right;
 }
