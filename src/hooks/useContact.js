@@ -12,7 +12,7 @@ export const useContact = () => {
         setLoading(true);
         try {
             setDisabled(true);
-            const response = await fetch('http://localhost:3000/contact', {
+            const response = await fetch('https://api.fincasdeaconcagua.com.ar/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
