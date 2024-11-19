@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useMediaQuery } from '@mui/material';
+import { MobileHeader } from './MobileHeader';
+import { useMediaScroll } from '../hooks/useMediaScroll';
 
 export const Header = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const { scrolled } = useMediaScroll(50);
+    const mobile = useMediaQuery('(max-width: 768px)');
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 870) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    })
+    if (mobile) return <MobileHeader/>
 
     return (
         <header className={scrolled ? 'scrolled' : null}>
