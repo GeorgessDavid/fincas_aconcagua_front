@@ -46,7 +46,7 @@ export const MobileHeader = () => {
                 flexShrink: 0,
                 '& .MuiDrawer-paper': {
                     width: '100%',
-                    top: '6%',
+                    top: '8%',
                     boxShadow: 'border-box',
                     backgroundColor: 'white'
                 },
