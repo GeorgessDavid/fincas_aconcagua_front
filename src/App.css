@@ -311,8 +311,23 @@ section p li {
   }
 }
 
+@media only screen and (min-width: 1360px) and (max-width: 1600px) {
+  html{
+    font-size: 13px !important;
+  }
+}
 
-@media only screen and (min-width: 770px) and (max-width: 1279px) {
+@media only screen and (min-width: 1280px) and (max-width: 1359px) {
+  #contacto form {
+    width: 75%;
+  }
+
+  #contacto p{
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 1279px) {
   video{
     clip-path: none;
     height: 90vh !important;
@@ -331,10 +346,42 @@ section p li {
   .lotes-img{
     width: 80%;
   }
+
+  section#contacto{
+    width: 100%;
+  }
+  
+  section#contacto div{
+    display: flex;
+    width: 100%;
+  }
+
+  div.form-container{
+    width: 100%;
+  }
+
+  div.form-container form{
+    width: 100%;
+    min-width: 90%;
+  }
+
+  div.button-section{
+    width: 100%;
+    align-items: center;
+  }
+
+  div.button-section span.contact-span{
+    margin: 1rem 0
+  }
+
+  #contacto p{
+    width: 90%;
+    font-size: 1rem;
+  }
 }
 
 
-@media only screen and (min-width: 0px) and (max-width: 769px) {
+@media only screen and (min-width: 0px) and (max-width: 849px) {
   html{
     font-size: 12px;
   }
