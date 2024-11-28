@@ -5,6 +5,7 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 import { Galeria } from './components/Galery';
 import { Contact } from './components/Contact';
 import { Ubication } from './components/Ubication';
+import { Footer } from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
@@ -29,6 +30,7 @@ function App() {
       <Galeria />
       <Contact />
       <Ubication />
+      <Footer />
     </>
   )
 }
