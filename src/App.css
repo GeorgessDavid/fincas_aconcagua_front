@@ -279,6 +279,28 @@ section p li {
   animation: loading 3s infinite;
 }
 
+footer {
+  height: 10vh;
+  background-color: #212526;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+footer > div.logoContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+footer > div.logoContainer img {
+  width: 100px;
+  margin: 0.5rem;
+}
 @keyframes grow {
   0% {
     transform: scale(1);
