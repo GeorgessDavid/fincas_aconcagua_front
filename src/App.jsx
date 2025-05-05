@@ -4,7 +4,7 @@ import { Lotes } from './components/Lotes';
 import { WhatsAppButton } from './components/WhatsAppButton/WhatsAppButton';
 import { Galeria } from './components/Galery';
 import { Contact } from './components/Contact';
-// import { Ubication } from './components/Ubication';
+import { Ubication } from './components/Ubication';
 import { Footer } from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <ToastContainer 
+      <ToastContainer
         position='bottom-center'
         autoClose={5000}
         theme='dark'
@@ -28,8 +28,10 @@ function App() {
       <Lotes />
       <WhatsAppButton />
       <Galeria />
-      <Contact />
-      {/* <Ubication /> */}
+      <div className="contact-ubication-container">
+        <Contact />
+        <Ubication />
+      </div>
       <Footer />
     </>
   )

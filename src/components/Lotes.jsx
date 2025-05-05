@@ -2,7 +2,7 @@ export const Lotes = () => {
     return (
         <section id="lotes">
             <h2>Lotes</h2>
-            <img src="/lotes.jpg" alt="Lotes" className="lotes-img" />
+            <img src="https://media.fincasdeaconcagua.com.ar/lotes.png" alt="Lotes" className="lotes-img" />
             <p>
                 Características principales:
                 <br />
