@@ -1,4 +1,4 @@
-import { YouTube, Facebook, Instagram, LinkedIn } from '@mui/icons-material';
+import { /* YouTube, */ Facebook, Instagram, /*LinkedIn,*/ Email } from '@mui/icons-material';
 // import { TikTok } from './TikTok';
 
 export const Footer = () => {
@@ -19,13 +19,17 @@ export const Footer = () => {
                         <a href='https://www.instagram.com/fincasdeaconcagua' target='_blank'>fincasdeaconcagua</a>
                     </div>
                     <div>
+                        <Email/>
+                        <a href='mailto:u3pinfo@gmail.com' target='_blank'>u3pinfo@gmail.com</a>
+                    </div>
+                    {/* <div>
                         <YouTube />
                         <a href='#' target='_blank'>Fincas de Aconcagua</a>
                     </div>
                     <div>
                         <LinkedIn />
                         <a href='#' target='_blank'>Fincas de Aconcagua</a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="foqo">

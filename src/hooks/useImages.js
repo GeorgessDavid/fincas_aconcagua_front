@@ -13,7 +13,7 @@ export const useImages = () => {
             setProgress(30)
             try {
                 setProgress(50)
-                const response = await fetch('https://api.fincasdeaconcagua.com.ar/images');
+                const response = await fetch('https://api.fincasdeaconcagua.com.ar/images?limit=12');
                 setProgress(80)
                 const data = await response.json();
                 setProgress(100)
