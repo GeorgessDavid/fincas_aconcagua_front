@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import { Video } from './components/Video';
 import { Lotes } from './components/Lotes';
-import { WhatsAppButton } from './components/WhatsAppButton';
+import { WhatsAppButton } from './components/WhatsAppButton/WhatsAppButton';
 import { Galeria } from './components/Galery';
 import { Contact } from './components/Contact';
 import { Ubication } from './components/Ubication';

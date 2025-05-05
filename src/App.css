@@ -145,26 +145,6 @@ section p li {
   box-shadow: 0 2px 5px grey;
 }
 
-.whatsapp-button {
-  background-color: #005725;
-  color: white;
-  padding: 1rem;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 10%;
-  right: 5%;
-  z-index: 2000;
-  cursor: pointer;
-  transition: all 300ms ease-in;
-}
-
-.whatsapp-button:hover {
-  background-color: #007e3b;
-}
-
-.whatsapp-button:hover svg {
-  text-shadow: 0 0 5px white;
-}
 
 .galery-container {
   margin: 1rem;
@@ -280,7 +260,7 @@ section p li {
 }
 
 footer {
-  height: 10vh;
+  height: 20vh;
   background-color: #212526;
   color: white;
   display: flex;
@@ -300,6 +280,24 @@ footer > div.logoContainer{
 footer > div.logoContainer img {
   width: 100px;
   margin: 0.5rem;
+}
+
+footer > div.socialContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialContainer > div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.25rem;
+}
+
+.socialContainer > div > a{
+  margin: 0 0.5rem;
+  color: white;
+  text-decoration: none;
 }
 @keyframes grow {
   0% {
