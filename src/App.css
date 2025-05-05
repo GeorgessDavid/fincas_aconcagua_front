@@ -191,9 +191,15 @@ section p li {
   margin: 1rem;
 }
 
-#contacto div {
+
+.contact-ubication-container{
   display: flex;
   justify-content: space-around;
+  width: 100%;
+}
+
+#ubicacion {
+  margin: 3rem 3rem 3rem 0;
 }
 
 .form-container {
@@ -207,6 +213,8 @@ section p li {
 .button-section {
   width: 35vw;
   margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;;
 }
 
 .contact-span {
