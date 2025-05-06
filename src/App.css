@@ -338,6 +338,10 @@ footer {
   text-decoration: none;
 }
 
+.MuiOutlinedInput-root {
+  padding-left: 1rem; /* Ajusta este valor según sea necesario */
+}
+
 @keyframes grow {
   0% {
     transform: scale(1);
