@@ -9,20 +9,19 @@ import { Footer } from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+import { useMediaQuery } from './hooks/useMediaQueries';
 
 function App() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
     <>
       <Header />
       <ToastContainer
-        position='bottom-center'
+        position={isMobile ? 'top-center' : 'bottom-center'}
+        {...isMobile ? { style: { top: '1rem', width: '90%', margin: '1rem'} } : null}
         autoClose={5000}
         theme='dark'
-        style={{
-          width: '25%',
-        }}
-        toastClassName="custom-toast"
       />
       <Video />
       <Lotes />

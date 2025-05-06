@@ -29,26 +29,36 @@ export const Contact = () => {
                         sendContact(values)
                     })}>
                         <TextField
-                            name="name" label="Nombre" {...register('name')}
-                            variant="outlined" margin="normal" fullWidth color="success" required
-                            error={!!errors.name} helperText={errors?.name?.msg} onChange={resetErrors}
+                            name="name" label="Nombre" 
+                            onChange={resetErrors}
+                            {...register('name')} required
+                            variant="outlined" margin="normal" fullWidth color="success" 
+                            error={!!errors.name} helperText={errors?.name?.msg} 
                         />
                         <TextField
-                            name="lastname" label="Apellido" {...register('lastname')}
-                            variant="outlined" margin="normal" fullWidth color="success" required
-                            error={!!errors.lastname} helperText={errors?.lastname?.msg} onChange={resetErrors} />
+                            name="lastname" label="Apellido" 
+                            onChange={resetErrors}
+                            {...register('lastname')} required
+                            variant="outlined" margin="normal" fullWidth color="success" 
+                            error={!!errors.lastname} helperText={errors?.lastname?.msg}  />
                         <TextField
-                            name="email" label="Correo electrónico" {...register('email')} required
+                            name="email" label="Correo electrónico" 
+                            onChange={resetErrors}
+                            {...register('email')} required
                             variant="outlined" margin="normal" fullWidth color="success"
-                            error={!!errors.email} helperText={errors?.email?.msg} onChange={resetErrors} />
+                            error={!!errors.email} helperText={errors?.email?.msg}  />
                         <TextField
-                            name="phone" label="Teléfono" {...register('phone')} required
+                            name="phone" label="Teléfono" 
+                            onChange={resetErrors}
+                            {...register('phone')} required
                             variant="outlined" margin="normal" fullWidth color="success"
-                            error={!!errors.phone} helperText={errors?.phone?.msg} onChange={resetErrors} onKeyDown={onlyNumbers} />
+                            error={!!errors.phone} helperText={errors?.phone?.msg}  onKeyDown={onlyNumbers} />
                         <TextField
-                            name="message" label="Mensaje" {...register('message')} required
+                            name="message" label="Mensaje" 
+                            onChange={resetErrors}
+                            {...register('message')} required
                             variant="outlined" margin="normal" fullWidth color="success" multiline rows={4}
-                            error={!!errors.message} helperText={errors?.message?.msg} onChange={resetErrors} />
+                            error={!!errors.message} helperText={errors?.message?.msg}  />
                         <div className="button-section">
                             <span className="contact-span">* Campos obligatorios.</span>
                             <LoadingButton
