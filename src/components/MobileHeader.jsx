@@ -50,7 +50,7 @@ export const MobileHeader = () => {
                     boxShadow: 'border-box',
                     backgroundColor: 'white'
                 },
-            }}>
+            }} onClose={handleOpen}>
                 <Divider />
                 <DrawerBody>
                     <List>
