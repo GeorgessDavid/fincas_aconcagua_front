@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+public/*.mp4
+/public/*.mp4
+/public/fincas_imgs
+
 
 # Editor directories and files
 .vscode/*
