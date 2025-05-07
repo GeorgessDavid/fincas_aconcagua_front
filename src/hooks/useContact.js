@@ -1,14 +1,15 @@
 import { useState, useCallback } from 'react';
-import { toast }  from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 export const useContact = () => {
-    const [errors, setErrors ] = useState({});
+    const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
-    const [status, setStatus ] = useState(null);
+    const [status, setStatus] = useState(null);
     const [disabled, setDisabled] = useState(false);
+    const [sent, setSent] = useState(false);
 
-    const sendContact = useCallback(async ({email, name, lastname, phone, message}) => {
+    const sendContact = useCallback(async ({ email, name, lastname, phone, message }) => {
         setLoading(true);
         try {
             setDisabled(true);
@@ -17,17 +18,18 @@ export const useContact = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({email, name, lastname, phone, message}),
+                body: JSON.stringify({ email, name, lastname, phone, message }),
             });
             const data = await response.json();
 
-            if(response.status != 201){
+            if (response.status != 201) {
                 const notify = () => toast.warning('Error! Los datos enviados tienen errores. Por favor, revisa los campos.');
                 notify();
                 setErrors(data.errors);
             }
 
-            if(response.status === 201){
+            if (response.status === 201) {
+                setSent(true);
                 const notify = () => toast.success('Mensaje enviado con éxito.');
                 notify();
             }
@@ -38,20 +40,23 @@ export const useContact = () => {
             notify();
             console.error(error);
             setErrors(error);
-        }finally{
+        } finally {
             setLoading(false);
             setTimeout(() => {
                 setDisabled(false)
+                setSent(false);
             }, 10000)
-        }
-    },[])
 
-    const resetErrors = () => {setErrors({})}
+        }
+    }, [])
+
+    const resetErrors = () => { setErrors({}) }
 
     return {
         errors,
         loading,
         status,
+        sent,
         sendContact,
         resetErrors,
         disabled

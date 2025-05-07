@@ -12,7 +12,7 @@ export const Lotes = () => {
                 </>
             :
                 <>
-                    <img src="https://media.fincasdeaconcagua.com.ar/lotes.png" alt="Lotes" className="lotes-img" />
+                    <ZoomableImage src="https://media.fincasdeaconcagua.com.ar/lotes.png" alt="Lotes" height="400px" width="auto" style={{ borderRadius: '0', marginBottom: '2rem' }} />
                 </>
             }
             <p>
