@@ -21,7 +21,7 @@ export const Lotes = () => {
                 <li>Lotes desde 1000 m², diseñados para brindarte privacidad y espacio.</li>
                 <li>Ubicación privilegiada en una zona residencial vecina de barrios cerrados.</li>
                 <li>Infraestructura confiable con tendido eléctrico de EDENOR.</li>
-                <li>Cercanía y accesibilidad con acceso pavimentado a solo unas cuadras de la ruta 26.</li>
+                <li>Cercanía y accesibilidad con acceso pavimentado a 2km de la RP. 26.</li>
                 <li>Barrio abierto con cerco perimetral para tu tranquilidad.</li>
                 <li>Aprovechá nuestros precios de preventa y opciones de financiación.</li>
                 <br />
