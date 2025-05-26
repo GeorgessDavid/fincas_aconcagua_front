@@ -18,12 +18,12 @@ export const Lotes = () => {
             <p>
                 Características principales:
                 <br />
-                <li>Parcelas desde 1000 m², diseñadas para brindarte privacidad y espacio.</li>
-                <li>Ubicación privilegiada en una zona residencial vecina de barrios cerrados.</li>
-                <li>Infraestructura confiable con tendido eléctrico de EDENOR.</li>
-                <li>Cercanía y accesibilidad con acceso pavimentado a 2km de la RP. 26.</li>
                 <li>Barrio abierto con cerco perimetral.</li>
-                <li>Aprovechá nuestros precios de preventa y opciones de financiación.</li>
+                <li>Ubicación privilegiada en una zona residencial vecina de barrios cerrados.</li>
+                <li>Cercanía y accesibilidad: acceso pavimentado, 2km desde RP. 26.</li>
+                <li>Parcelas desde 1000 m², diseñadas para brindarte privacidad y espacio.</li>
+                <li>Infraestructura confiable con tendido eléctrico de media y baja tensión (EDENOR).</li>
+                <li>Aprovechá nuestras opciones de financiación.</li>
                 <br />
                 Fincas de Aconcagua es el lugar ideal para construir tu hogar y disfrutar de la vida que mereces. ¡Consultanos y empezá a planificar tu futuro hoy mismo!</p>
         </section>
