@@ -9,7 +9,7 @@ export const MobileHeader = () => {
     const [open, setOpen] = useState(false);
     const { scrolled } = useMediaScroll(50);
     const navLinks = [
-        { name: 'LOTES', link: '/#lotes' },
+        { name: 'PARCELAS', link: '/#lotes' },
         { name: 'GALERIA', link: '/#galeria' },
         { name: 'CONTACTO', link: '/#contacto' },
         { name: 'UBICACIÓN', link: '/#ubicacion' },
