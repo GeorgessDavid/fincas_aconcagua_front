@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Noto_Serif } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -24,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -4,7 +4,7 @@ import Parcela from "./Parcela";
 
 export default function MapaParcelas() {
     return (
-        <div className="relative w-full border-[32px] border-gray-200 bg-[url('/fincas_air.png')] bg-cover shadow-sm" style={{ aspectRatio: '16/9' }}>
+        <div className="relative w-full border-[32px] rounded-2xl border-gray-200 bg-[url('/fincas_air.png')] bg-cover shadow-sm" style={{ aspectRatio: '16/9' }}>
             <span className="absolute -top-7 left-1/2 -translate-x-1/2 font-bold text-black shadow-sm">
                 Calle Charrúa
             </span>

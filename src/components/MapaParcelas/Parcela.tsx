@@ -26,7 +26,7 @@ export default function Parcela({ className, metrosCuadrados, numero, forma, sta
                 <span className="text-xl font-bold font-montserrat">{numero}</span>
                 <span className="text-sm font-montserrat ">{status === 'Disponible' ? `${metrosCuadrados} M²` : 'VENDIDO'}</span>
             </div>
-            <div className="hidden w-fit min-w-xs h-fit group-hover:flex z-10 group-hover:absolute top-0 left-30 group-hover:flex-col items-start justify-start bg-gray-300 px-8 py-4 border-2 border-gray-400">
+            <div className="hidden w-fit min-w-xs h-fit group-hover:flex z-50 group-hover:absolute top-10 left-30 group-hover:flex-col items-start justify-start bg-zinc-100 rounded-lg px-8 py-4 shadow-md shadow-gray-200 ">
                 <div className="flex justify-start gap-2">
                     <span className="text-black font-bold font-montserrat">Parcela:</span>
                     <h2 className="text-black font-montserrat">{numero}</h2>
