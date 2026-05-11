@@ -9,7 +9,7 @@ type ParcelaProps = {
 export default function Parcela({ className, metrosCuadrados, numero, forma, status }: ParcelaProps) {
 
     const baseClasses = 'flex flex-col items-center justify-center text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
-    const formaClasses = forma === 'rectangle' ? 'w-[136px] h-[64px]' : 'w-[90.7px] h-[128px]';
+    const formaClasses = forma === 'rectangle' ? 'w-[150px] h-[64px]' : 'w-[100px] h-[128px]';
 
 
     return (
@@ -18,7 +18,7 @@ export default function Parcela({ className, metrosCuadrados, numero, forma, sta
                 `
             ${formaClasses} 
             ${className}
-            ${status === 'Disponible' ? 'bg-text-primary/30 hover:bg-text-primary/80 hover:scale-105' :
+            ${status === 'Disponible' ? 'bg-primary/30 hover:bg-primary/80 hover:scale-105' :
                     'bg-yellow-500/30 hover:bg-yellow-500/80 hover:scale-105'}
                 ${baseClasses} 
                 `

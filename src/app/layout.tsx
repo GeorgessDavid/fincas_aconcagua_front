@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -24,10 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} h-screen antialiased`}>
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@24,400" />
+      </head>
+      <body className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

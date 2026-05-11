@@ -2,7 +2,7 @@
 
 :root {
   --text-primary: #005725;
-   --text-black: #101219;
+  --text-black: #101219;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-noto-serif: 'Noto-serif', serif;
   --background: #ffffff;
@@ -10,8 +10,10 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-text-primary: var(--text-primary);
-  --color-text-black: var(--text-black);
+  --color-primary: var(--text-primary);
+  --color-main-black: var(--text-black);
+  --color-secondary-black: #212529;
+  --color-tertiary: #94d4b6;
   --font-montserrat: var(--font-montserrat);
   --font-noto-serif: var(--font-noto-serif);
 }

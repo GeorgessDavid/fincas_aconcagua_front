@@ -17,7 +17,7 @@ export default function MapaParcelas() {
             <span className="absolute -right-22 top-1/2 -translate-y-1/2 rotate-90 font-bold text-black">
                 Calle Felipe Flynt
             </span>
-            <div className="absolute inset-6 grid" style={{ gridTemplateColumns: '272px 56px 272px 56px 272px 56px 264px' }}>
+            <div className="absolute inset-6 grid" style={{ gridTemplateColumns: '300px 40px 300px 40px 300px 40px 300px' }}>
                 <RenderSector parcelas={PARCELAS_SECTOR_A} />
                 <div></div>
                 <RenderSector parcelas={PARCELAS_SECTOR_B} />
@@ -26,7 +26,7 @@ export default function MapaParcelas() {
                 <div></div>
                 <RenderSector parcelas={PARCELAS_SECTOR_D} />
             </div>
-            <div className="absolute bottom-2 left-6  grid" style={{ gridTemplateColumns: '272px 56px 272px 56px 272px 56px 264px' }}>
+            <div className="absolute bottom-2 left-6  grid" style={{ gridTemplateColumns: '300px 40px 300px 40px 300px 40px 300px' }}>
                 <RenderSector parcelas={PARCELAS_SECTOR_E} reversed special />
                 <div></div>
                 <RenderSector parcelas={PARCELAS_SECTOR_F} reversed />

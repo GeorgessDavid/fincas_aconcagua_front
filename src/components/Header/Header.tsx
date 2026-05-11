@@ -1,26 +1,31 @@
 'use client';
 
-import { NAV_LINKS } from "@/assets/constants/navigation";
+import { Inicio, Galeria, Servicios, Parcelas } from "@/assets/constants/navigation";
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 export default function Header() {
     return (
-        <header className="flex w-full h-24 justify-between items-center bg-white/80 sticky top-0 z-50 px-16 py-4 backdrop-blur-md shadow-lg">
+        <header className="flex w-full h-24 gap-6 justify-center items-center bg-white/50 fixed top-0 z-50 px-16 py-4 backdrop-blur-md shadow-md">
+            <div className="w-fit flex gap-6">
+                <NavLink href={Inicio} />
+                <NavLink href={Galeria} />
+            </div>
             <div className="w-fit flex items-center">
                 <Image src="/fincas_logo.webp" alt="Logo" width={150} height={150} className="h-auto" />
             </div>
-            <nav className="w-fit">
-                <ul className="flex items-center gap-8">
-                    {NAV_LINKS.map((link) => (
-                        <li key={link.href} className="hover:text-secondary transition-all duration-300 ease-in-out after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:bottom-0 after:left-0 after:transition-all after:duration-300 after:ease-in-out after:hover:h-full">
-                            <a href={link.href} className="text-primary font-montserrat font-semibold ">{link.title}</a>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-            <div>
-                <button className="px-8 rounded-2xl py-2 cursor-pointer bg-text-primary text-white text-sm hover:scale-105 transition-all duration-300 ease-in-out">Más información</button>
+            <div className="w-fit flex gap-6">
+                <NavLink href={Servicios} />
+                <NavLink href={Parcelas} />
             </div>
         </header>
+    )
+}
+
+
+const NavLink = ({ href }: { href: { title: string; path: string; } }) => {
+    return (
+        <Link className="font-bold text-primary uppercase text-lg tracking-wide hover:text-main-black hover:-translate-y-0.5 duration-200 transition-all after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-main-black after:transition-all after:duration-200 hover:after:w-full" href={href.path}>{href.title}</Link>
     )
 }
