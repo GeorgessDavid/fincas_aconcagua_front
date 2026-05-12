@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Noto_Serif } from "next/font/google";
+import { Montserrat, Noto_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -14,6 +14,11 @@ const notoSerif = Noto_Serif({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Fincas de Aconcagua",
   description: "Fincas de Aconcagua",
@@ -25,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} h-screen antialiased`}>
+    <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} ${inter.variable} h-screen antialiased`}>
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@24,400" />
       </head>

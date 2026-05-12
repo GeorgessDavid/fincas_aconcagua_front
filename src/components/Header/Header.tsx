@@ -1,22 +1,28 @@
 'use client';
 
-import { Inicio, Galeria, Servicios, Parcelas } from "@/assets/constants/navigation";
+import { Concepto, Galeria, Caracteristicas, Parcelas } from "@/assets/constants/navigation";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
 
 
 export default function Header() {
+    const { push } = useRouter();
+    const redirectToHome = () => {
+        push('/');
+    }
+
     return (
         <header className="flex w-full h-24 gap-6 justify-center items-center bg-white/50 fixed top-0 z-50 px-16 py-4 backdrop-blur-md shadow-md">
             <div className="w-fit flex gap-6">
-                <NavLink href={Inicio} />
+                <NavLink href={Concepto} />
                 <NavLink href={Galeria} />
             </div>
-            <div className="w-fit flex items-center">
+            <div className="w-fit flex items-center cursor-pointer" onClick={redirectToHome} title="Inicio">
                 <Image src="/fincas_logo.webp" alt="Logo" width={150} height={150} className="h-auto" />
             </div>
             <div className="w-fit flex gap-6">
-                <NavLink href={Servicios} />
+                <NavLink href={Caracteristicas} />
                 <NavLink href={Parcelas} />
             </div>
         </header>

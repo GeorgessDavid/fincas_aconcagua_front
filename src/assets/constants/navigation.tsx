@@ -13,7 +13,8 @@ class Link implements LinkInterface{
     }
 }
 
-export const Inicio = new Link('Inicio', '/');
+export const Concepto = new Link('Concepto', '/#concepto');
 export const Parcelas = new Link('Parcelas', '/#parcelas');
-export const Servicios = new Link('Servicios', '/#servicios');
+export const Caracteristicas = new Link('Infraestructura', '/#caracteristicas');
 export const Galeria = new Link('Galería', '/#galeria');
+export const Ubicacion = new Link ('Ubicación', '/#ubicacion')

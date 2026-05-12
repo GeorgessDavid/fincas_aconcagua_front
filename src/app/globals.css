@@ -5,6 +5,7 @@
   --text-black: #101219;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-noto-serif: 'Noto-serif', serif;
+  --font-inter: 'Inter', sans-serif;
   --background: #ffffff;
 }
 
@@ -16,8 +17,12 @@
   --color-tertiary: #94d4b6;
   --font-montserrat: var(--font-montserrat);
   --font-noto-serif: var(--font-noto-serif);
+  --font-inter: var(--font-inter);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-montserrat);
