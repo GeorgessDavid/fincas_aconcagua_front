@@ -1,12 +1,13 @@
-import { HeroSection, ParcelasSection, ConceptSection, BeneficiosSection, UbicacionSection, ContactoSection } from "@/components/HomeContents";
+import { HeroSection, ParcelasSection, ConceptSection, BeneficiosSection, UbicacionSection, ContactoSection, GaleriaSection } from "@/components/HomeContents";
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center gap-16">
+        <div className="flex flex-col">
             <HeroSection />
             <ConceptSection />
             <ParcelasSection />
             <BeneficiosSection />
+            <GaleriaSection />
             <UbicacionSection />
             <ContactoSection />
         </div>

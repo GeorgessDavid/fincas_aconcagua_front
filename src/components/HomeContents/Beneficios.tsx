@@ -10,7 +10,7 @@ type BenefitProps = {
 
 export default function Beneficios() {
     return (
-        <section className="px-64 relative my-16 w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
+        <section className="px-64 relative w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
             <Reveal variant="fadeUp" delay={0.1}>
                 <h2 className="text-4xl font-montserrat text-main-black font-semibold">Infraestructura</h2>
             </Reveal>
