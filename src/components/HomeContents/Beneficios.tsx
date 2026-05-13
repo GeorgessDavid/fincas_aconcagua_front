@@ -12,7 +12,7 @@ export default function Beneficios() {
     return (
         <section className="px-64 relative my-16 w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
             <Reveal variant="fadeUp" delay={0.1}>
-                <h2 className="text-4xl font-montserrat text-main-black font-semibold">Características</h2>
+                <h2 className="text-4xl font-montserrat text-main-black font-semibold">Infraestructura</h2>
             </Reveal>
             <Reveal variant="fadeUp" delay={0.2}>
                 <p className="text-lg font-montserrat text-main-black/80 font-medium max-w-4xl text-center tracking-wide">Fincas de Aconcagua reúne atributos pensados para quienes buscan espacio, tranquilidad y la posibilidad de proyectar su vivienda en un entorno residencial en crecimiento.</p>
