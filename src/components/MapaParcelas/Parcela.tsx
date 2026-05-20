@@ -4,9 +4,10 @@ type ParcelaProps = {
     metrosCuadrados: number;
     status: 'Vendido' | 'Disponible';
     forma: 'rectangle' | 'square';
+    fraccion: 1 | 2
 }
 
-export default function Parcela({ className, metrosCuadrados, numero, forma, status }: ParcelaProps) {
+export default function Parcela({ className, metrosCuadrados, numero, forma, status, fraccion }: ParcelaProps) {
 
     const baseClasses = 'flex flex-col items-center justify-center text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
     const formaClasses = forma === 'rectangle' ? 'w-[150px] h-[64px]' : 'w-[100px] h-[128px]';
@@ -39,7 +40,17 @@ export default function Parcela({ className, metrosCuadrados, numero, forma, sta
                     <span className="text-black font-bold font-montserrat">Estado:</span>
                     <span className={`text-black font-montserrat font-semibold ${status === 'Disponible' ? 'text-green-800' : 'text-yellow-800'}`}>{status}</span>
                 </div>
+                <ParcelaDatadisplay label="Fracción" value={fraccion}/>
             </div>
+        </div>
+    )
+}
+
+const ParcelaDatadisplay = ({label, value}: {label: string, value: string | number}) => {
+    return (
+        <div className="flex justify-start gap-2">
+            <span className="text-black font-bold font-montserrat">{label}: </span>
+            <span className="text-black font-montserrat">{value}</span>
         </div>
     )
 }

@@ -59,6 +59,7 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             numero={parcela.numero}
                             status={parcela.status}
                             forma={parcela.forma}
+                            fraccion={parcela.fraccion}
                         />
                     ))}
                 </div>
@@ -70,6 +71,7 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             numero={parcela.numero}
                             status={parcela.status}
                             forma={parcela.forma}
+                            fraccion={parcela.fraccion}
                         />
                     ))}
                 </div>
@@ -84,6 +86,7 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             numero={parcela.numero}
                             status={parcela.status}
                             forma={parcela.forma}
+                            fraccion={parcela.fraccion}
                         />
                     ))}
                 </div>

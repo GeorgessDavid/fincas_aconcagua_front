@@ -32,8 +32,8 @@ export default function Footer() {
                     <a href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Sobre Nosotros</a>
                 </div>
                 <div className="flex flex-col items-start justify-start gap-2">
-                    <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Ubicación</h2>
-
+                    <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Desarrollo</h2>
+                    {/* TODO => Include Developed by Toia and GeorgessDavid */}
                 </div>
             </div>
             <Divider variant="middle" sx={{ backgroundColor: '#ffffff40' }} />
