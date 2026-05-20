@@ -14,7 +14,7 @@ export default function Header() {
     }
 
     return (
-        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 fixed top-0 z-50 backdrop-blur-md shadow-md">
+        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 sticky top-0 z-50 backdrop-blur-md shadow-md">
             <WebHeader onLogoClickFunction={redirectToHome} />
             <MobileHeader />
         </header>
