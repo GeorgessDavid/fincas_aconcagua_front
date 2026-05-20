@@ -18,6 +18,9 @@
   --font-montserrat: var(--font-montserrat);
   --font-noto-serif: var(--font-noto-serif);
   --font-inter: var(--font-inter);
+  --breakpoint-3xl: 1720px;
+  --breakpoint-2xl: 1367px;
+  --breakpoint-xxxs: 372px;
 }
 
 html {
@@ -26,4 +29,8 @@ html {
 
 body {
   font-family: var(--font-montserrat);
+}
+
+.MuiTypography-root {
+  font-family: var(--font-montserrat) !important;
 }

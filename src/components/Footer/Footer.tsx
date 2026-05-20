@@ -4,12 +4,12 @@ import { Divider } from '@mui/material';
 export default function Footer() {
     return (
         <footer className="bg-secondary-black w-full h-full relative bottom-0 z-50">
-            <div className="w-full h-full flex items-start justify-between px-64 py-32">
-                <div className="flex flex-col items-start justify-start gap-2  text-center">
+            <div className="w-full h-full flex flex-col lg:flex-row items-center lg:items-start gap-8 justify-between px-8 py-12 2xl:px-64 py-32">
+                <div className="flex flex-col items-center lg:items-start justify-start gap-2 text-center">
                     <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Fincas de Aconcagua</h2>
                     <span className="text-white/80 text-md italic font-noto-serif">Viví la tranquilidad que te merecés</span>
                     <p className="text-white text-lg font-montserrat">Un proyecto de <strong>Urbanizadora Tres Pinos S.A.</strong></p>
-                    <div className="flex gap-6 mt-10 w-full">
+                    <div className="flex justify-center lg:justify-start gap-6 mt-10 w-full">
                         <IconBox title="Enviar Correo" onClick={() => console.log('Enviar Correo')}>
                             <Mail className='!text-4xl !text-white !rounded-full !p-1.5' />
                         </IconBox>
@@ -24,14 +24,14 @@ export default function Footer() {
                         </IconBox>
                     </div>
                 </div>
-                <div className="flex flex-col items-start justify-start gap-2">
+                <div className="flex flex-col items-center lg:items-start justify-start gap-2 text-center">
                     <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Información</h2>
                     <a href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Terminos y Condiciones</a>
                     <a href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Política de Privacidad</a>
                     <a href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Contacto</a>
                     <a href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Sobre Nosotros</a>
                 </div>
-                <div className="flex flex-col items-start justify-start gap-2">
+                <div className="flex flex-col items-center lg:items-start justify-start gap-2 text-center">
                     <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Desarrollo</h2>
                     {/* TODO => Include Developed by Toia and GeorgessDavid */}
                 </div>

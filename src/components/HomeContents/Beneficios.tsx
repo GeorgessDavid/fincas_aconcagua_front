@@ -10,14 +10,14 @@ type BenefitProps = {
 
 export default function Beneficios() {
     return (
-        <section className="px-64 relative w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
+        <section className="px-4 md:px-8 lg:px-24 relative w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
             <Reveal variant="fadeUp" delay={0.1}>
                 <h2 className="text-4xl font-montserrat text-main-black font-semibold">Infraestructura</h2>
             </Reveal>
             <Reveal variant="fadeUp" delay={0.2}>
                 <p className="text-lg font-montserrat text-main-black/80 font-medium max-w-4xl text-center tracking-wide">Fincas de Aconcagua reúne atributos pensados para quienes buscan espacio, tranquilidad y la posibilidad de proyectar su vivienda en un entorno residencial en crecimiento.</p>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                 <Reveal variant="slideLeft" delay={0.3}>
                     <BenefitsCard benefit={{ icon: 'landscape', title: 'Parcelas residenciales', description: 'Espacios amplios para proyectar una vivienda propia, con libertad de diseño y una mayor conexión con el entorno.' }} />
                 </Reveal>
@@ -43,7 +43,7 @@ export default function Beneficios() {
 
 const BenefitsCard = ({ benefit }: { benefit: BenefitProps }) => {
     return (
-        <div className="bg-white h-full p-8 rounded-xl border border-zinc-300/30 hover:border-primary/30 transition-colors group duration-200 shadow-md">
+        <div className="bg-white flex flex-col items-center lg:items-start h-full p-8 rounded-xl border border-zinc-300/30 hover:border-primary/30 transition-colors group duration-200 shadow-md">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined  text-primary!">{benefit.icon}</span>
             </div>

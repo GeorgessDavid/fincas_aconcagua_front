@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { API_URL } from '@/constants';
 
 export type ImageData = {
@@ -9,26 +9,32 @@ export type ImageData = {
     link: string;
 }
 
-export const useImages = () => {
+export const useImages = (quantity: number) => {
     const [images, setImages] = useState<ImageData[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const fetchImages = useCallback(async() => {
-        setLoading(true);
-        try {
-            const response = await fetch(`${API_URL}/images`);
-            const data = await response.json();
-            setImages(data.images);
-        } catch (error) {
-            console.error('Error fetching images:', error);
-        } finally {
-            setLoading(false);
-        }
-    }, []);
-    
     useEffect(() => {
-        fetchImages();
-    }, [fetchImages]);
+        const controller = new AbortController();
+        const load = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch(`${API_URL}/images?max=${quantity}`, { signal: controller.signal });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                setImages(data.images);
+            } catch (error) {
+                if ((error as { name: string }).name !== 'AbortError') {
+                    console.error('Error fetching images:', error);
+                }
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        void load();
+
+        return () => controller.abort();
+    }, [quantity]);
 
     return { images, loading };
 }
