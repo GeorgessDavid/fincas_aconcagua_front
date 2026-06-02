@@ -22,6 +22,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Fincas de Aconcagua",
   description: "Fincas de Aconcagua",
+  icons: {
+    icon: "/fincas_web_tab_logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +36,7 @@ export default function RootLayout({
     <html lang="es" className={`${montserrat.variable} ${notoSerif.variable} ${inter.variable} h-screen antialiased`}>
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@24,400" />
+        <link rel="icon" href="/fincas_web_tab_logo.png" />
       </head>
       <body className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />

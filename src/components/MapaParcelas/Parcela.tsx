@@ -10,7 +10,7 @@ type ParcelaProps = {
 export default function Parcela({ className, metrosCuadrados, numero, forma, status, fraccion }: ParcelaProps) {
 
     const baseClasses = 'flex flex-col items-center justify-center text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
-    const formaClasses = forma === 'rectangle' ? 'w-[150px] h-[64px]' : 'w-[100px] h-[128px]';
+    const formaClasses = forma === 'rectangle' ? 'w-full py-2' : 'w-full h-full';
 
 
     return (

@@ -7,6 +7,11 @@ export type ParcelaType = {
 }
 
 export type ParcelaData = {
+    topLimiter: string;
+    bottomLimiter: string;
+    leftLimiter: string;
+    rightLimiter: string;
+    sectorImage?: string;
     izquierda: ParcelaType[];
     derecha: ParcelaType[];
     center?: ParcelaType[];
@@ -28,6 +33,11 @@ class Parcela implements ParcelaType {
 }
 
 export const PARCELAS_SECTOR_A: ParcelaData = {
+    sectorImage: '/fincas_air_sector_a.png',
+    topLimiter: 'Calle Charrúa',
+    bottomLimiter: 'Sector E',
+    leftLimiter: 'Calle Aconcagua',
+    rightLimiter: 'Sector B',
     izquierda: [
         {
             numero: '38',
@@ -105,6 +115,11 @@ export const PARCELAS_SECTOR_A: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_B: ParcelaData = {
+    sectorImage: '/fincas_air_sector_b.png',
+    topLimiter: 'Calle Charrúa',
+    bottomLimiter: 'Sector F',
+    leftLimiter: 'Sector A',
+    rightLimiter: 'Sector C',
     izquierda: [
         {
             numero: '28',
@@ -159,6 +174,11 @@ export const PARCELAS_SECTOR_B: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_C: ParcelaData = {
+    sectorImage: '/fincas_air_sector_c.png',
+    topLimiter: 'Calle Charrúa',
+    bottomLimiter: 'Sector G',
+    leftLimiter: 'Sector B',
+    rightLimiter: 'Sector D',
     izquierda: [
         {
             numero: '19',
@@ -213,6 +233,11 @@ export const PARCELAS_SECTOR_C: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_D: ParcelaData = {
+    sectorImage: '/fincas_air_sector_d.png',
+    topLimiter: 'Calle Charrúa',
+    bottomLimiter: 'Sector H',
+    rightLimiter: 'Calle Felipe Flynt',
+    leftLimiter: 'Sector C',
     izquierda: [
         {
             numero: '10',
@@ -260,6 +285,11 @@ export const PARCELAS_SECTOR_D: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_E: ParcelaData = {
+    sectorImage: '/fincas_air_sector_e.png',
+    topLimiter: 'Sector A',
+    bottomLimiter: 'Calle Los Pinos',
+    leftLimiter: 'Calle Aconcagua',
+    rightLimiter: 'Sector F',
     izquierda: [
         new Parcela('35', 1000.40, 'Disponible', 'rectangle', 2),
         new Parcela('36', 1000.40, 'Disponible', 'rectangle', 2)
@@ -276,6 +306,11 @@ export const PARCELAS_SECTOR_E: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_F: ParcelaData = {
+    sectorImage: '/fincas_air_sector_f.png',
+    topLimiter: 'Sector B',
+    bottomLimiter: 'Calle Los Pinos',
+    leftLimiter: 'Sector E',
+    rightLimiter: 'Sector G',
     center: [
         new Parcela('25', 1018.54, 'Vendido', 'square', 2),
         new Parcela('24', 1163.12, 'Disponible', 'square', 2),
@@ -294,6 +329,11 @@ export const PARCELAS_SECTOR_F: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_G: ParcelaData = {
+    sectorImage: '/fincas_air_sector_g.png',
+    topLimiter: 'Sector C',
+    bottomLimiter: 'Calle Los Pinos',
+    leftLimiter: 'Sector F',
+    rightLimiter: 'Sector H',
     center: [
         new Parcela('16', 1110.94, 'Disponible', 'square', 2),
         new Parcela('15', 1163.12, 'Disponible', 'square', 2),
@@ -312,6 +352,11 @@ export const PARCELAS_SECTOR_G: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_H: ParcelaData = {
+    sectorImage: '/fincas_air_sector_h.png',
+    topLimiter: 'Sector D',
+    bottomLimiter: 'Calle Los Pinos',
+    leftLimiter: 'Sector G',
+    rightLimiter: 'Calle Felipe Flynt',
     izquierda: [
         new Parcela('06', 1018.67, 'Disponible', 'rectangle', 2),
         new Parcela('07', 1026.40, 'Disponible', 'rectangle', 2),

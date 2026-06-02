@@ -14,7 +14,7 @@ export default function Header() {
     }
 
     return (
-        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 sticky top-0 z-50 backdrop-blur-md shadow-md">
+        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 lg:fixed sticky top-0 z-50 backdrop-blur-md shadow-md">
             <WebHeader onLogoClickFunction={redirectToHome} />
             <MobileHeader />
         </header>
@@ -29,7 +29,7 @@ const WebHeader = ({ onLogoClickFunction }: { onLogoClickFunction: () => void })
                 <NavLink href={Galeria} />
             </div>
             <div className="w-fit flex items-center cursor-pointer" onClick={onLogoClickFunction} title="Inicio">
-                <Image src="/fincas_logo.webp" alt="Logo" width={150} height={150} className="h-auto" />
+                <Image src="/fincas_logo.webp" alt="Logo" width={150} height={150} loading="eager" />
             </div>
             <div className="w-fit flex gap-6">
                 <NavLink href={Caracteristicas} />

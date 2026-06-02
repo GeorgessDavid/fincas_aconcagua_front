@@ -2,8 +2,15 @@
 
 import { MAIN_VIDEO, MAIN_IMAGE_MOBILE } from "@/assets/constants/links";
 import { Reveal } from "../Reveal/Reveal";
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+    const { push } = useRouter();
+
+    const goToParelas = () => {
+        return push('/#parcelas')
+    };
+
     return (
         <div className="w-screen h-screen relative">
             <div className="lg:hidden w-full h-full">
@@ -28,7 +35,7 @@ export default function Hero() {
                         <h2 className="text-2xl font-montserrat tracking-wide text-white">Viví la tranquilidad que merecés</h2>
                     </Reveal>
                     <Reveal variant="fadeUp" delay={0.34}>
-                        <button className="bg-transparent border-2 border-white text-white py-4 px-8 rounded-lg cursor-pointer hover:bg-white hover:text-primary transition-all duration-200">Explorar parcelas →</button>
+                        <button className="bg-transparent border-2 border-white text-white py-4 px-8 rounded-lg cursor-pointer hover:bg-white hover:text-primary transition-all duration-200" onClick={goToParelas}>Explorar parcelas →</button>
                     </Reveal>
                 </div>
             </div>
