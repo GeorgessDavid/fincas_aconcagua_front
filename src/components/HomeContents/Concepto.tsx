@@ -4,7 +4,7 @@ import { Reveal } from "../Reveal/Reveal";
 
 export default function Concepto() {
     return (
-        <section className="w-full h-auto flex flex-col md:flex-row justify-evenly px-8 py-12 lg:justify-between lg:px-32 lg:py-36 gap-8 bg-zinc-100" id="concepto">
+        <section className="w-full h-auto flex flex-col md:flex-row justify-evenly px-8 py-12 lg:justify-between lg:px-32 lg:py-36 3xl:px-62! gap-8 bg-zinc-100" id="concepto">
             <div className="flex flex-col max-w-2xl gap-4">
                 <Reveal variant="slideLeft" delay={0.1}>
                     <h2 className="text-lg font-inter uppercase tracking-widest text-primary font-bold">Concepto</h2>

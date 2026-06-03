@@ -5,7 +5,7 @@ import { Reveal } from "../Reveal/Reveal";
 
 export default function Parcelas() {
     return (
-        <section className="px-12 relative my-16 w-full flex flex-col gap-8 lg:px-62" id="parcelas">
+        <section className="px-12 relative my-16 w-full flex flex-col gap-8 3xl:px-62" id="parcelas">
             <Reveal variant="fadeUp" delay={0.1}>
                 <h2 className="text-4xl font-montserrat text-main-black font-extrabold">Parcelas</h2>
                 <div className="w-24 h-[8px] bg-primary"></div>

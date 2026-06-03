@@ -10,7 +10,7 @@ type ParcelaProps = {
 export default function Parcela({ className, metrosCuadrados, numero, forma, status, fraccion }: ParcelaProps) {
 
     const baseClasses = 'flex flex-col items-center justify-center text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
-    const formaClasses = forma === 'rectangle' ? 'w-full py-2' : 'w-full h-full';
+    const formaClasses = forma === 'rectangle' ? 'w-full md:py-3 xl:py-0.5 2xl:py-2 3xl:py-4' : 'w-full h-full';
 
 
     return (
@@ -24,23 +24,22 @@ export default function Parcela({ className, metrosCuadrados, numero, forma, sta
                 ${baseClasses} 
                 `
             } >
-                <span className="text-xl font-bold font-montserrat">{numero}</span>
-                <span className="text-sm font-montserrat ">{status === 'Disponible' ? `${metrosCuadrados} M²` : 'VENDIDO'}</span>
+                {/* <span className="text-xl font-bold font-montserrat">{numero}</span>
+                <span className="text-sm font-montserrat ">{status === 'Disponible' ? 'DISPONIBLE' : 'VENDIDO'}</span> */}
+                <span className="text-sm font-montserrat">Parcela</span>
+                <span className="text-2xl font-bold font-montserrat">{numero}</span>
             </div>
-            <div className="hidden w-fit min-w-xs h-fit group-hover:flex z-50 group-hover:absolute top-10 left-30 group-hover:flex-col items-start justify-start bg-zinc-100 rounded-lg px-8 py-4 shadow-md shadow-gray-200 ">
+            <div className={`hidden w-fit ${status === 'Disponible' ? 'bg-green-100 border-l-6 border-l-primary' : 'bg-amber-100 border-l-6 border-l-accent'} min-w-xs h-fit group-hover:flex z-50 group-hover:absolute top-10 left-30 group-hover:flex-col items-start justify-start rounded-lg px-8 py-4`}>
                 <div className="flex justify-start gap-2">
                     <span className="text-black font-bold font-montserrat">Parcela:</span>
                     <h2 className="text-black font-montserrat">{numero}</h2>
                 </div>
+                <ParcelaDatadisplay label="Fracción" value={fraccion}/>
                 <div className="flex justify-start gap-2">
                     <span className="text-black font-bold font-montserrat">Metros Cuadrados:</span>
-                    <span className="text-black font-montserrat">{metrosCuadrados}</span>
+                    <span className="text-black font-montserrat">{metrosCuadrados} M²</span>
                 </div>
-                <div className="flex justify-start gap-2">
-                    <span className="text-black font-bold font-montserrat">Estado:</span>
-                    <span className={`text-black font-montserrat font-semibold ${status === 'Disponible' ? 'text-green-800' : 'text-yellow-800'}`}>{status}</span>
-                </div>
-                <ParcelaDatadisplay label="Fracción" value={fraccion}/>
+                <ParcelaDatadisplay label="Estado" value={status} />
             </div>
         </div>
     )

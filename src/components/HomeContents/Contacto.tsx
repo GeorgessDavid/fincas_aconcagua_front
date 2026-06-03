@@ -2,9 +2,14 @@
 
 import { Reveal } from '../Reveal/Reveal';
 import { TextField } from '@mui/material';
+import { WhatsApp } from '@/assets/constants/links';
 
 
 const Contacto = () => {
+    const goToWhatsApp = () => {
+        window.open(WhatsApp);
+    }
+
     return (
         <section className="w-full flex flex-col gap-4 lg:flex-row justify-around bg-zinc-50 py-24 px-8 2xl:py-32 2xl:px-42">
             <Reveal variant="slideLeft" delay={0.1}>
@@ -22,7 +27,7 @@ const Contacto = () => {
                             <span className="font-inter">u3pinfo@gmail.com</span>
                         </div>
                     </div>
-                    <button className="px-12 py-4 bg-transparent border-2 border-primary text-primary rounded-xl font-bold cursor-pointer hover:bg-primary hover:text-white hover:scale-105 transition-all duration-200">Contactar por WhatsApp</button>
+                    <button onClick={goToWhatsApp} className="px-12 py-4 bg-transparent border-2 border-primary text-primary rounded-xl font-bold cursor-pointer hover:bg-primary hover:text-white hover:scale-105 transition-all duration-200">Contactar por WhatsApp</button>
                 </div>
             </Reveal>
             <Reveal variant="slideRight" delay={0.1}>

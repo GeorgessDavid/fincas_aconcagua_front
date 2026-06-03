@@ -1,10 +1,10 @@
 'use client';
 
-import { Concepto, Galeria, Caracteristicas, Parcelas } from "@/assets/constants/navigation";
+import { Concepto, Galeria, Caracteristicas, Parcelas, Ubicacion } from "@/assets/constants/navigation";
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
-import DrawerMenu  from '@/components/Drawer/Drawer' ;
+import DrawerMenu from '@/components/Drawer/Drawer';
 
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
     }
 
     return (
-        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 lg:fixed sticky top-0 z-50 backdrop-blur-md shadow-md">
+        <header className="w-full h-24 gap-6 bg-white/70 lg:bg-white/50 lg:fixed sticky! top-0 z-50 backdrop-blur-md shadow-md">
             <WebHeader onLogoClickFunction={redirectToHome} />
             <MobileHeader />
         </header>
@@ -23,17 +23,16 @@ export default function Header() {
 
 const WebHeader = ({ onLogoClickFunction }: { onLogoClickFunction: () => void }) => {
     return (
-        <div className="hidden lg:flex items-center justify-center gap-8 lg:block px-16 py-4">
-            <div className="w-fit flex gap-6">
-                <NavLink href={Concepto} />
-                <NavLink href={Galeria} />
-            </div>
+        <div className="hidden lg:flex items-center xl:justify-between 3xl:justify-evenly gap-8 lg:block px-16 py-4">
             <div className="w-fit flex items-center cursor-pointer" onClick={onLogoClickFunction} title="Inicio">
                 <Image src="/fincas_logo.webp" alt="Logo" width={150} height={150} loading="eager" />
             </div>
             <div className="w-fit flex gap-6">
+                <NavLink href={Concepto} />
+                <NavLink href={Galeria} />
                 <NavLink href={Caracteristicas} />
                 <NavLink href={Parcelas} />
+                <NavLink href={Ubicacion} />
             </div>
         </div>
     )
