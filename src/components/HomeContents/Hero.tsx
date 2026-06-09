@@ -12,10 +12,10 @@ export default function Hero() {
     };
 
     return (
-        <div className="w-screen h-screen relative">
+        <div className="w-screen h-screen relative" id='hero'>
             <div className="lg:hidden w-full h-full">
                 <div className="bg-black/40 absolute w-full h-full top-0 left-0 z-10 flex flex-col items-center justify-center px-4 gap-2">
-                    <h1 className="text-[22px] xxxs:text-2xl font-montserrat uppercase tracking-widest text-white font-extrabold">Fincas de Aconcagua</h1>
+                    <h1 className="text-[22px] xxxs:text-2xl font-montserrat uppercase tracking-wide text-white font-extrabold">Fincas de Aconcagua</h1>
                     <div className="h-0.5 bg-white w-full mx-4"></div>
                     <p className="text-white font-montserrat tracking-wide">Viví la tranquilidad que merecés</p>
 

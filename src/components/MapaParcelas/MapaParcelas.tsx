@@ -8,7 +8,7 @@ import { ParcelaType } from "@/assets/data/parcelas";
 export default function MapaParcelas() {
     return (
         <>
-            <div className="relative hidden lg:block w-full border-32 rounded-2xl border-gray-200 shadow-sm" >
+            <div className="relative hidden lg:block w-full border-32 rounded-2xl border-gray-200 shadow-sm " >
                 <Image src="/fincas_air_2026.png" alt="Fincas" width={1920} height={1080} />
                 <span className="absolute -top-7 left-1/2 -translate-x-1/2 font-bold text-black shadow-sm">
                     Calle Charrúa
@@ -30,7 +30,7 @@ export default function MapaParcelas() {
 
                     267x139
                 */}
-                <div className="absolute top-8 grid w-full 3xl:h-[44%]" style={{ gridTemplateColumns: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%' }}>
+                <div className="absolute top-8 grid w-full xl:h-[35%] 3xl:h-[44%]" style={{ gridTemplateColumns: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%' }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_A} />
                     <div />
@@ -81,12 +81,15 @@ export default function MapaParcelas() {
 }
 
 function RenderSector({ parcelas, reversed = false, special = false }: { parcelas: ParcelaData, reversed?: boolean, special?: boolean }) {
+    const { rightLimiter } = parcelas;
+
+
     return (
         <div className={`flex ${reversed ? 'flex-col-reverse' : 'flex-col'} h-full w-full`}>
             {special && (
-                <div className="w-full bg-gray-800/70 flex gap-4 items-center justify-center text-white border-2 border-gray-200 xl:py-2 2xl:py-4 3xl:py-8 ms-2">
+                <div className="w-full bg-gray-800/70 flex gap-4 items-center justify-center text-white border-2 border-gray-200 py-2 ms-2">
                     <div className="flex flex-col items-center">
-                        <span className="font-bold text-lg">ESPACIO PÚBLICO</span>
+                        <span className="font-bold text-sm">ESPACIO PÚBLICO</span>
                         <span className="text-sm">2191,08 M²</span>
                     </div>
                 </div>
@@ -101,8 +104,9 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             status={parcela.status}
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
-                        />
-                    ))}
+                            rightSector={rightLimiter === 'Calle Felipe Flynt'}
+                            />
+                        ))}
                 </div>
                 <div className="flex flex-1 flex-col h-1/2">
                     {parcelas.derecha.map((parcela, index) => (
@@ -113,8 +117,9 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             status={parcela.status}
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
-                        />
-                    ))}
+                            rightSector={rightLimiter === 'Calle Felipe Flynt'}
+                            />
+                        ))}
                 </div>
 
             </div>
@@ -122,12 +127,13 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                 <div className="flex items-center h-full w-full ms-2">
                     {parcelas.center.map((parcela, index) => (
                         <Parcela
-                            key={index}
-                            metrosCuadrados={parcela.metrosCuadrados}
-                            numero={parcela.numero}
-                            status={parcela.status}
-                            forma={parcela.forma}
-                            fraccion={parcela.fraccion}
+                        key={index}
+                        metrosCuadrados={parcela.metrosCuadrados}
+                        numero={parcela.numero}
+                        status={parcela.status}
+                        forma={parcela.forma}
+                        fraccion={parcela.fraccion}
+                        rightSector={rightLimiter === 'Calle Felipe Flynt'}
                         />
                     ))}
                 </div>
@@ -181,10 +187,10 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
                     {sector.sectorImage &&
                         <div className="w-fit flex flex-col items-center my-8 px-8 relative">
                             <div className="p-2 w-fit relative">
-                                <span className="absolute -top-4 left-1/2 -translate-x-1/2 font-bold">{sector.topLimiter}</span>
+                                <span className="absolute -top-4 left-1/2 -translate-x-1/2 font-bold whitespace-nowrap origin-center">{sector.topLimiter}</span>
                                 <span className="absolute top-1/2 -left-4 -translate-y-1/2 -translate-x-1/2 -rotate-90 whitespace-nowrap origin-center font-bold">{sector.leftLimiter}</span>
                                 <span className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 -right-4  rotate-90 whitespace-nowrap origin-center font-bold">{sector.rightLimiter}</span>
-                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-bold">{sector.bottomLimiter}</span>
+                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-bold whitespace-nowrap origin-center">{sector.bottomLimiter}</span>
                                 <Image src={sector.sectorImage} alt="Sector Image" width={400} height={500} className="rounded-2xl shadow-2xl" />
                             </div>
                             {/* <div className="w-full h-full absolute top-0 -left-2 px-12 py-4">
@@ -231,15 +237,18 @@ const CollapsableParcela = ({ parcel }: { parcel: ParcelaType }) => {
 
     return (
         <div className="flex flex-col justify-start items-start">
-            <div onClick={toggleExpand} className={`w-full p-4 border ${isExpanded && parcel.status === 'Vendido' ? 'bg-yellow-100! border-b-0! rounded-b-none! ' : isExpanded && parcel.status === 'Disponible' ? 'bg-green-100! border-b-0! rounded-b-none!' : ''} border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-row justify-between items-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg`}>
+            <div onClick={toggleExpand} className={`w-full p-4 border ${parcel.status==='Vendido' ? 'border-l-6 border-l-accent' : 'border-l-6 border-l-primary'} ${isExpanded && parcel.status === 'Vendido' ? 'bg-yellow-100! border-b-0! rounded-b-none! ' : isExpanded && parcel.status === 'Disponible' ? 'bg-green-100! border-b-0! rounded-b-none!' : ''} border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-row justify-between items-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg`}>
                 <div className="flex flex-col items-start justify-start">
                     <h2 className="tracking-wide text-xs font-regular text-gray-500 font-inter">Parcela</h2>
                     <h3 className="font-bold font-montserrat text-lg">{parcel.numero}</h3>
                 </div>
-                <div className={`w-3 h-3 rounded-full ${parcel.status === 'Vendido' ? 'bg-yellow-300 shadow-yellow-800 shadow-lg' : 'bg-green-400 shadow-green-800 shadow-lg'}`} />
+                <span className="material-symbols-outlined">
+                    {!isExpanded ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
+                </span>
+                {/* <div className={`w-3 h-3 rounded-full ${parcel.status === 'Vendido' ? 'bg-yellow-300 shadow-yellow-800 shadow-lg' : 'bg-green-400 shadow-green-800 shadow-lg'}`} /> */}
             </div>
             {isExpanded && (
-                <div className={`px-4 py-4 border-t border-gray-100  rounded-b-2xl w-full max-h-96 overflow-y-auto ${parcel.status === 'Vendido' ? 'bg-yellow-100' : 'bg-green-100'}`}>
+                <div className={`px-4 py-4 border-t border-gray-100  rounded-b-2xl w-full max-h-96 overflow-y-auto ${parcel.status === 'Vendido' ? 'bg-yellow-100 border-l-6 border-l-accent' : 'bg-green-100 border-l-6 border-l-primary'}`}>
                     <div className="grid grid-cols-1 gap-2">
                         <div className="flex flex-row items-center justify-start gap-2">
                             <span className="font-bold text-sm">Parcela:</span>

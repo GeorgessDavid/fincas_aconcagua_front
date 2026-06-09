@@ -1,5 +1,6 @@
 'use client';
 import { Facebook, Instagram, WhatsApp, Mail } from '@mui/icons-material';
+import { WhatsApp as WhatsAppLink, Facebook as FacebookLink, goTo, Instagram as InstagramLink, Mail as MailLink} from '@/assets/constants/links';
 import { Divider } from '@mui/material';
 export default function Footer() {
     return (
@@ -10,16 +11,16 @@ export default function Footer() {
                     <span className="text-white/80 text-md italic font-noto-serif">Viví la tranquilidad que te merecés</span>
                     <p className="text-white text-lg font-montserrat">Un proyecto de <strong>Urbanizadora Tres Pinos S.A.</strong></p>
                     <div className="flex justify-center lg:justify-start gap-6 mt-10 w-full">
-                        <IconBox title="Enviar Correo" onClick={() => console.log('Enviar Correo')}>
+                        <IconBox title="Enviar Correo" onClick={() => goTo(MailLink)}>
                             <Mail className='!text-4xl !text-white !rounded-full !p-1.5' />
                         </IconBox>
-                        <IconBox title="Enviar Mensaje" onClick={() => console.log('Enviar Mensaje')}>
+                        <IconBox title="Enviar Mensaje" onClick={() => goTo(WhatsAppLink)}>
                             <WhatsApp className='!text-4xl !text-white !rounded-full !p-1.5' />
                         </IconBox>
-                        <IconBox title="Instagram" onClick={() => console.log('Instagram')}>
+                        <IconBox title="Instagram" onClick={() => goTo(InstagramLink)}>
                             <Instagram className='!text-4xl !text-white !rounded-full !p-1.5' />
                         </IconBox>
-                        <IconBox title="Facebook" onClick={() => console.log('Facebook')}>
+                        <IconBox title="Facebook" onClick={() => goTo(FacebookLink)}>
                             <Facebook className='!text-4xl !text-white !rounded-full !p-1.5' />
                         </IconBox>
                     </div>
@@ -38,7 +39,7 @@ export default function Footer() {
             </div>
             <Divider variant="middle" sx={{ backgroundColor: '#ffffff40' }} />
             <div className="w-full flex items-center justify-center py-4">
-                <span className="text-white/60 text-md font-noto-serif">Todos los derechos reservados © 2026 - Fincas de Aconcagua</span>
+                <span className="text-white/60 text-xs mx-4 lg:text-md text-center font-montserrat">Todos los derechos reservados © 2026 - Fincas de Aconcagua</span>
             </div>
         </footer>
     )

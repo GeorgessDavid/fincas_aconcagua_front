@@ -11,12 +11,12 @@ const Contacto = () => {
     }
 
     return (
-        <section className="w-full flex flex-col gap-4 lg:flex-row justify-around bg-zinc-50 py-24 px-8 2xl:py-32 2xl:px-42">
+        <section className="w-full flex flex-col gap-4  lg:flex-row justify-around lg:justify-between bg-zinc-50 py-24 px-8 2xl:py-32 2xl:px-28">
             <Reveal variant="slideLeft" delay={0.1}>
                 <div className="flex flex-col items-start max-w-3xl gap-6">
                     <h2 className="font-inter tracking-widest font-bold text-xl uppercase text-primary">Contacto</h2>
-                    <h3 className="font-montserrat tracking-wide font-semibold text-3xl">Empezá a proyectar tu lugar en Maschwitz</h3>
-                    <p className="tracking-wide font-regular text-black/80 text-lg">Solicitá información sobre las parcelas disponibles en Fincas de Aconcagua y conocé más sobre esta oportunidad para construir o invertir en un entorno residencial.</p>
+                    <h3 className="font-montserrat tracking-wide font-semibold text-3xl">Empezá a proyectar tu hogar</h3>
+                    <p className="font-regular tracking-wide  text-black/80 text-lg">Solicitá información sobre las parcelas disponibles en Fincas de Aconcagua y conocé más sobre esta oportunidad para construir o invertir en un entorno residencial.</p>
                     <div className="flex flex-col mt-8 gap-6">
                         <div className="flex justify-start gap-6">
                             <span className="material-symbols-outlined text-primary!">location_on</span>

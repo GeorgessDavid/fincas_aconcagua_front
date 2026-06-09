@@ -7,3 +7,7 @@ export const WhatsApp: string = "https://api.whatsapp.com/send/?phone=%2B5491167
 export const Facebook: string = "https://www.facebook.com/fincasdeaconcagua";
 export const Instagram: string = "https://www.instagram.com/fincasdeaconcagua";
 export const Mail: string = "mailto:u3pinfo@gmail.com";
+
+export const goTo = (target: string ) => {
+    window.open(target, '_blank')
+}

@@ -17,7 +17,7 @@ export default function Parcelas() {
             </Reveal>
             <Reveal variant="fadeUp" delay={0.35}>
                 <MapaParcelas />
-                <span className="text-md font-inter text-black/70 lg:hidden">Haz click en alguno de los sectores para ver más información.</span>
+                <span className="text-xs font-inter text-black/70 lg:hidden">Haz click en alguno de los sectores para ver más información.</span>
             </Reveal>
         </section>
     )

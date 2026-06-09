@@ -31,12 +31,12 @@ const DrawerMenu = ({ navData }: DrawerProps) => {
         <div>
             <IconButton onClick={handleOpen}>
                 <span className="material-symbols-outlined text-primary! text-4xl! cursor-pointer">menu</span>
-            </IconButton><Drawer
+            </IconButton>
+            <Drawer
                 sx={{
-                    width: '90%',
-                    flexShrink: 0,
+                    width: '70%',
                     '& .MuiDrawer-paper': {
-                        width: '90%',
+                        width: '70%',
                         boxShadow: 'border-box'
                     }
                 }}
