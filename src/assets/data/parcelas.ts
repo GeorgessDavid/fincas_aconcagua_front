@@ -33,7 +33,7 @@ class Parcela implements ParcelaType {
 }
 
 export const PARCELAS_SECTOR_A: ParcelaData = {
-    sectorImage: '/fincas_air_sector_a.png',
+    sectorImage: '/fincas_air_sector_a_opb.png',
     topLimiter: 'Calle Charrúa',
     bottomLimiter: 'Sector E',
     leftLimiter: 'Calle Aconcagua',
@@ -115,7 +115,7 @@ export const PARCELAS_SECTOR_A: ParcelaData = {
 }
 
 export const PARCELAS_SECTOR_B: ParcelaData = {
-    sectorImage: '/fincas_air_sector_b.png',
+    sectorImage: '/fincas_air_sector_b_opb.png',
     topLimiter: 'Calle Charrúa',
     bottomLimiter: 'Sector F',
     leftLimiter: 'Sector A',

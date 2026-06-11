@@ -1,11 +1,15 @@
 'use client';
 import { PARCELAS_SECTOR_A, PARCELAS_SECTOR_B, PARCELAS_SECTOR_C, PARCELAS_SECTOR_D, PARCELAS_SECTOR_E, PARCELAS_SECTOR_F, PARCELAS_SECTOR_G, PARCELAS_SECTOR_H, ParcelaData } from "@/assets/data/parcelas";
-import Parcela from "./Parcela";
+import Parcela, { ParcelaDatadisplay } from "./Parcela";
 import Image from 'next/image';
 import { Divider } from '@mui/material';
 import { useState } from 'react';
 import { ParcelaType } from "@/assets/data/parcelas";
+
+
 export default function MapaParcelas() {
+
+
     return (
         <>
             <div className="relative hidden lg:block w-full border-32 rounded-2xl border-gray-200 shadow-sm " >
@@ -73,16 +77,14 @@ export default function MapaParcelas() {
                         <div />
                         <Sector sectorName="Sector H" sector={PARCELAS_SECTOR_H} />
                     </div>
-
                 </div>
             </div>
         </>
     )
 }
 
-function RenderSector({ parcelas, reversed = false, special = false }: { parcelas: ParcelaData, reversed?: boolean, special?: boolean }) {
+function RenderSector({ parcelas, reversed = false, special = false, setParcelaData = undefined }: { parcelas: ParcelaData, reversed?: boolean, special?: boolean, setParcelaData?: (parcela: ParcelaType) => void }) {
     const { rightLimiter } = parcelas;
-
 
     return (
         <div className={`flex ${reversed ? 'flex-col-reverse' : 'flex-col'} h-full w-full`}>
@@ -105,21 +107,23 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
                             rightSector={rightLimiter === 'Calle Felipe Flynt'}
-                            />
-                        ))}
+                            onClick={setParcelaData ? () => setParcelaData(parcela) : undefined}
+                        />
+                    ))}
                 </div>
                 <div className="flex flex-1 flex-col h-1/2">
                     {parcelas.derecha.map((parcela, index) => (
                         <Parcela
                             key={index}
+                            onClick={setParcelaData ? () => setParcelaData(parcela) : undefined}
                             metrosCuadrados={parcela.metrosCuadrados}
                             numero={parcela.numero}
                             status={parcela.status}
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
                             rightSector={rightLimiter === 'Calle Felipe Flynt'}
-                            />
-                        ))}
+                        />
+                    ))}
                 </div>
 
             </div>
@@ -127,13 +131,14 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
                 <div className="flex items-center h-full w-full ms-2">
                     {parcelas.center.map((parcela, index) => (
                         <Parcela
-                        key={index}
-                        metrosCuadrados={parcela.metrosCuadrados}
-                        numero={parcela.numero}
-                        status={parcela.status}
-                        forma={parcela.forma}
-                        fraccion={parcela.fraccion}
-                        rightSector={rightLimiter === 'Calle Felipe Flynt'}
+                            key={index}
+                            metrosCuadrados={parcela.metrosCuadrados}
+                            numero={parcela.numero}
+                            onClick={setParcelaData ? () => setParcelaData(parcela) : undefined}
+                            status={parcela.status}
+                            forma={parcela.forma}
+                            fraccion={parcela.fraccion}
+                            rightSector={rightLimiter === 'Calle Felipe Flynt'}
                         />
                     ))}
                 </div>
@@ -145,6 +150,7 @@ function RenderSector({ parcelas, reversed = false, special = false }: { parcela
 
 const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaData }) => {
     const [open, setOpen] = useState<boolean>(false);
+    const [parcelaSelected, setParcelaSelected] = useState<undefined | ParcelaType>(undefined);
 
     const handleOpen = () => {
         return setOpen(true);
@@ -193,14 +199,14 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
                                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-bold whitespace-nowrap origin-center">{sector.bottomLimiter}</span>
                                 <Image src={sector.sectorImage} alt="Sector Image" width={400} height={500} className="rounded-2xl shadow-2xl" />
                             </div>
-                            {/* <div className="w-full h-full absolute top-0 -left-2 px-12 py-4">
-                                <RenderSector parcelas={sector} special={sectorName === 'Sector E'} reversed={sector.bottomLimiter === 'Calle Los Pinos'} />
-                            </div> */}
+                            <div className="w-full h-full absolute top-0 -left-2 px-12 py-4">
+                                <RenderSector parcelas={sector} special={sectorName === 'Sector E'} reversed={sector.bottomLimiter === 'Calle Los Pinos'} setParcelaData={setParcelaSelected} />
+                            </div>
                         </div>
 
                     }
-                    <Divider variant="middle" orientation="horizontal" flexItem sx={{ marginTop: '2rem' }} />
-                    <div className="grid grid-cols-3 gap-2 mb-6 px-4 md:px-8 mt-8">
+                    <span className="ms-4 text-xs font-inter italic tracking-tight font-bold text-black/30 text-center">Tocá una parcela para obtener más información</span>
+                    <div className="grid grid-cols-3 gap-2 mb-6 px-4 md:px-8 mt-4">
                         <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
                             <p className="text-2xl font-bold text-blue-900">{stats.total}</p>
                             <p className="text-xs text-blue-700">Total</p>
@@ -214,14 +220,26 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
                             <p className="text-xs text-yellow-700">Vendidas</p>
                         </div>
                     </div>
-                    <div className="flex flex-col px-8 gap-4">
+                    {parcelaSelected &&
+                        <div className={`mx-4 p-4 mb-4 ${parcelaSelected.status === 'Vendido' ? 'border-l-6 border-l-accent bg-accent/30' : 'border-l-6 border-l-primary bg-green-100'} rounded-md`}>
+                            <div className="flex gap-2">
+                                <span className="font-bold font-montserrat">Parcela:</span>
+                                <span className="font-montserrat">{parcelaSelected.numero}</span>
+                            </div>
+                            <ParcelaDatadisplay label="Fracción" value={parcelaSelected.fraccion} />
+                            <ParcelaDatadisplay label="Metros Cuadrados" value={`${parcelaSelected.metrosCuadrados} m²`}  />
+                            <ParcelaDatadisplay label="Estado" value={parcelaSelected.status} />
+
+                        </div>
+                    }
+                    {/* <div className="flex flex-col px-8 gap-4">
 
                         {sector &&
                             allParcelas.map(parcelita => (
                                 <CollapsableParcela key={parcelita.numero} parcel={parcelita} />
                             ))
                         }
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -237,7 +255,7 @@ const CollapsableParcela = ({ parcel }: { parcel: ParcelaType }) => {
 
     return (
         <div className="flex flex-col justify-start items-start">
-            <div onClick={toggleExpand} className={`w-full p-4 border ${parcel.status==='Vendido' ? 'border-l-6 border-l-accent' : 'border-l-6 border-l-primary'} ${isExpanded && parcel.status === 'Vendido' ? 'bg-yellow-100! border-b-0! rounded-b-none! ' : isExpanded && parcel.status === 'Disponible' ? 'bg-green-100! border-b-0! rounded-b-none!' : ''} border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-row justify-between items-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg`}>
+            <div onClick={toggleExpand} className={`w-full p-4 border ${parcel.status === 'Vendido' ? 'border-l-6 border-l-accent' : 'border-l-6 border-l-primary'} ${isExpanded && parcel.status === 'Vendido' ? 'bg-yellow-100! border-b-0! rounded-b-none! ' : isExpanded && parcel.status === 'Disponible' ? 'bg-green-100! border-b-0! rounded-b-none!' : ''} border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-row justify-between items-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg`}>
                 <div className="flex flex-col items-start justify-start">
                     <h2 className="tracking-wide text-xs font-regular text-gray-500 font-inter">Parcela</h2>
                     <h3 className="font-bold font-montserrat text-lg">{parcel.numero}</h3>
@@ -273,3 +291,4 @@ const CollapsableParcela = ({ parcel }: { parcel: ParcelaType }) => {
 
     )
 }
+

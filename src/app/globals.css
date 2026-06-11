@@ -19,10 +19,12 @@
   --font-montserrat: var(--font-montserrat);
   --font-noto-serif: var(--font-noto-serif);
   --font-inter: var(--font-inter);
+  --font-ubuntu: 'Ubuntu', sans-serif;
   --breakpoint-3xl: 1720px;
   --breakpoint-2xl: 1367px;
   --breakpoint-xl: 1300px;
   --breakpoint-xxxs: 372px;
+
 }
 
 html {
@@ -35,4 +37,8 @@ body {
 
 .MuiTypography-root {
   font-family: var(--font-montserrat) !important;
+}
+
+.Toastify__toast{
+  background-color: #212529 !important;
 }

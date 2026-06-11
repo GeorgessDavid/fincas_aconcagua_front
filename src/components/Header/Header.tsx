@@ -10,7 +10,7 @@ import DrawerMenu from '@/components/Drawer/Drawer';
 export default function Header() {
     const { push } = useRouter();
     const redirectToHome = () => {
-        push('/#hero');
+        push('/#');
     }
 
     return (
@@ -42,7 +42,7 @@ const MobileHeader = () => {
     return (
         <div className="w-full h-full flex justify-between items-center px-8 lg:hidden">
             <Image src="/fincas_logo.webp" alt="logo" width={100} height={100} className="h-auto" />
-            <DrawerMenu navData={[Concepto, Galeria, Caracteristicas, Parcelas]} />
+            <DrawerMenu navData={[Concepto, Galeria, Caracteristicas, Parcelas, Ubicacion]} />
         </div>
     )
 }

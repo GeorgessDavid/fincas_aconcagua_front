@@ -6,16 +6,17 @@ type ParcelaProps = {
     forma: 'rectangle' | 'square';
     rightSector: boolean;
     fraccion: 1 | 2
+    onClick?: () => void;
 }
 
-export default function Parcela({ className, metrosCuadrados, numero, forma, status, fraccion, rightSector }: ParcelaProps) {
+export default function Parcela({ className, metrosCuadrados, numero, forma, status, fraccion, rightSector, onClick }: ParcelaProps) {
 
-    const baseClasses = 'flex  text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
+    const baseClasses = 'flex text-white cursor-pointer border-2 border-gray-200 transition-all duration-200';
     const formaClasses = forma === 'rectangle' ? 'w-full md:py-3 xl:py-0.5 2xl:py-2 3xl:py-4' : 'w-full h-full';
-    const flexProperties = forma === 'square' ? 'flex-col items-center justify-center': 'lg:flex-row lg:items-center lg:justify-evenly 3xl:flex-col 3xl:items-center 3xl:justify-center';
+    const flexProperties = forma === 'square' ? 'flex-col items-center justify-center': 'flex py-[0.325rem] items-center justify-center gap-2 lg:flex-row lg:items-center lg:justify-evenly 3xl:flex-col 3xl:items-center 3xl:justify-center';
 
     return (
-        <div className="group relative w-full h-full">
+        <div className="group relative w-full h-full" onClick={onClick}>
             <div className={
                 `
             ${formaClasses} 
@@ -47,11 +48,11 @@ export default function Parcela({ className, metrosCuadrados, numero, forma, sta
     )
 }
 
-const ParcelaDatadisplay = ({label, value}: {label: string, value: string | number}) => {
+export const ParcelaDatadisplay = ({label, value}: {label: string, value: string | number}) => {
     return (
         <div className="flex justify-start gap-2">
-            <span className="text-black font-bold font-montserrat">{label}: </span>
-            <span className="text-black font-montserrat">{value}</span>
+            <span className="text-black font-bold font-montserrat whitespace-nowrap origin-center">{label}: </span>
+            <span className="text-black font-montserrat whitespace-nowrap origin-center">{value}</span>
         </div>
     )
 }
