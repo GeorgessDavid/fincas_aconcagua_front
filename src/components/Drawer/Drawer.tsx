@@ -34,10 +34,9 @@ const DrawerMenu = ({ navData }: DrawerProps) => {
             </IconButton>
             <Drawer
                 sx={{
-                    width: '70%',
                     '& .MuiDrawer-paper': {
                         width: '70%',
-                        boxShadow: 'border-box'
+                        boxSizing: 'border-box'
                     }
                 }}
                 anchor='left'

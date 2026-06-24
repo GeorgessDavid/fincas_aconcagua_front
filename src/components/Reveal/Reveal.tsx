@@ -1,6 +1,7 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
 import { ReactNode } from 'react';
+import { useMediaQuery } from '@mui/material';
 
 type RevealVariant = 'fadeUp' | 'fadeIn' | 'slideLeft' | 'slideRight' | 'zoomIn';
 
@@ -46,6 +47,7 @@ export function Reveal({
     once = true,
     amount = 0.15,
 }: RevealProps) {
+    const isMobile = useMediaQuery('(max-width: 600px)')
     return (
         <motion.div
             className={className}
@@ -57,7 +59,7 @@ export function Reveal({
                 delay,
                 ease: [0.22, 1, 0.36, 1],
             }}
-            variants={variants[variant]}
+            variants={!isMobile ? variants['fadeIn'] : variants[variant]}
         >
             {children}
         </motion.div>

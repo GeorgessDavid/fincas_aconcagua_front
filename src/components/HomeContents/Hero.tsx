@@ -3,6 +3,7 @@
 import { MAIN_VIDEO, MAIN_IMAGE_MOBILE } from "@/assets/constants/links";
 import { Reveal } from "../Reveal/Reveal";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Hero() {
     const { push } = useRouter();
@@ -13,14 +14,14 @@ export default function Hero() {
 
     return (
         <div className="w-screen h-screen relative" id='hero'>
-            <div className="lg:hidden w-full h-full">
+            <div className="lg:hidden relative w-full h-full overflow-hidden">
                 <div className="bg-black/40 absolute w-full h-full top-0 left-0 z-10 flex flex-col items-center justify-center px-4 gap-2">
                     <h1 className="text-[22px] xxxs:text-2xl font-montserrat uppercase tracking-wide text-white font-extrabold">Fincas de Aconcagua</h1>
                     <div className="h-0.5 bg-white w-full mx-4"></div>
                     <p className="text-white font-montserrat tracking-wide">Viví la tranquilidad que merecés</p>
 
                 </div>
-                <img src={MAIN_IMAGE_MOBILE} alt="Fondo" className="lg:hidden object-cover w-full h-full" />
+                <Image width={300} height={300} src={MAIN_IMAGE_MOBILE} alt="Fondo" className="lg:hidden object-cover object-center w-full h-full" />
 
             </div>
             <div className="hidden lg:block relative w-full h-full">

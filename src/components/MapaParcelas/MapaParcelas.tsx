@@ -26,14 +26,7 @@ export default function MapaParcelas() {
                 <span className="absolute -right-22 top-1/2 -translate-y-1/2 rotate-90 font-bold text-black">
                     Calle Felipe Flynt
                 </span>
-                {/* 1411x736
-                    streets= 30px
-                    leftlimit = 27px
-                    rightLimit = 24px
-                    parcelaHeight: 335
-
-                    267x139
-                */}
+            
                 <div className="absolute top-8 grid w-full xl:h-[35%] 3xl:h-[44%]" style={{ gridTemplateColumns: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%' }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_A} />
@@ -60,22 +53,22 @@ export default function MapaParcelas() {
                 <Image src="/fincas_air_2026.png" alt="Fincas Air" width={300} height={100} className="w-full z-0 rounded-2xl" />
                 <div className="w-full">
                     <div className="absolute top-1 md:top-4 grid w-full h-[45%]" style={{ gridTemplateColumns: '24% 1% 24% 1% 24% 1% 24%' }}>
-                        <Sector sectorName="Sector A" sector={PARCELAS_SECTOR_A} />
+                        <Sector sectorName="Manzana 1" sector={PARCELAS_SECTOR_A} />
                         <div />
-                        <Sector sectorName="Sector B" sector={PARCELAS_SECTOR_B} />
+                        <Sector sectorName="Manzana 2" sector={PARCELAS_SECTOR_B} />
                         <div />
-                        <Sector sectorName="Sector C" sector={PARCELAS_SECTOR_C} />
+                        <Sector sectorName="Manzana 3" sector={PARCELAS_SECTOR_C} />
                         <div />
-                        <Sector sectorName="Sector D" sector={PARCELAS_SECTOR_D} />
+                        <Sector sectorName="Manzana 4" sector={PARCELAS_SECTOR_D} />
                     </div>
                     <div className="absolute bottom-2 grid w-full h-[45%]" style={{ gridTemplateColumns: '24% 1% 24% 1% 24% 1% 24%' }}>
-                        <Sector sectorName="Sector E" sector={PARCELAS_SECTOR_E} />
+                        <Sector sectorName="Manzana 5" sector={PARCELAS_SECTOR_E} />
                         <div />
-                        <Sector sectorName="Sector F" sector={PARCELAS_SECTOR_F} />
+                        <Sector sectorName="Manzana 6" sector={PARCELAS_SECTOR_F} />
                         <div />
-                        <Sector sectorName="Sector G" sector={PARCELAS_SECTOR_G} />
+                        <Sector sectorName="Manzana 7" sector={PARCELAS_SECTOR_G} />
                         <div />
-                        <Sector sectorName="Sector H" sector={PARCELAS_SECTOR_H} />
+                        <Sector sectorName="Manzana 8" sector={PARCELAS_SECTOR_H} />
                     </div>
                 </div>
             </div>
@@ -83,8 +76,9 @@ export default function MapaParcelas() {
     )
 }
 
-function RenderSector({ parcelas, reversed = false, special = false, setParcelaData = undefined }: { parcelas: ParcelaData, reversed?: boolean, special?: boolean, setParcelaData?: (parcela: ParcelaType) => void }) {
+function RenderSector({ parcelas, reversed = false, special = false, setParcelaData = undefined, selectedParcela = undefined }: { parcelas: ParcelaData, reversed?: boolean, special?: boolean, setParcelaData?: (parcela: ParcelaType) => void, selectedParcela?: ParcelaType }) {
     const { rightLimiter } = parcelas;
+    const isParcelaSelected = (parcela: ParcelaType) => selectedParcela?.numero === parcela.numero && selectedParcela?.fraccion === parcela.fraccion;
 
     return (
         <div className={`flex ${reversed ? 'flex-col-reverse' : 'flex-col'} h-full w-full`}>
@@ -108,6 +102,7 @@ function RenderSector({ parcelas, reversed = false, special = false, setParcelaD
                             fraccion={parcela.fraccion}
                             rightSector={rightLimiter === 'Calle Felipe Flynt'}
                             onClick={setParcelaData ? () => setParcelaData(parcela) : undefined}
+                            isSelected={isParcelaSelected(parcela)}
                         />
                     ))}
                 </div>
@@ -122,6 +117,7 @@ function RenderSector({ parcelas, reversed = false, special = false, setParcelaD
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
                             rightSector={rightLimiter === 'Calle Felipe Flynt'}
+                            isSelected={isParcelaSelected(parcela)}
                         />
                     ))}
                 </div>
@@ -139,6 +135,7 @@ function RenderSector({ parcelas, reversed = false, special = false, setParcelaD
                             forma={parcela.forma}
                             fraccion={parcela.fraccion}
                             rightSector={rightLimiter === 'Calle Felipe Flynt'}
+                            isSelected={isParcelaSelected(parcela)}
                         />
                     ))}
                 </div>
@@ -157,6 +154,7 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
     };
 
     const handleClose = () => {
+        setParcelaSelected(undefined);
         return setOpen(false);
     }
 
@@ -180,7 +178,7 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
     return (
         <div className="w-full h-full">
             <div onClick={handleOpen} className="relative py-3 top-1 w-full h-full flex flex-col bg-primary/70 group text-white border-2 border-accent/40 flex justify-center items-center rounded-2xl cursor-pointer">
-                <h3 className="font-inter text-[10px] uppercase font-bold tracking-wide group-hover:scale-105 transition-all duration-200">{sectorName}</h3>
+                <h3 className="font-inter text-[9px] uppercase font-bold tracking-wide group-hover:scale-105 transition-all duration-200">{sectorName}</h3>
                 <h3 className="font-montserrat text-[8px] text-center group-hover:scale-105 transition-all duration-200">{stats.disponibles} parcelas disponibles.</h3>
             </div>
             <div className={`${open ? 'block' : 'hidden'} fixed top-0 left-0 z-10000 w-screen h-full bg-black/80  flex flex-col justify-center items-center`}>
@@ -200,7 +198,7 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
                                 <Image src={sector.sectorImage} alt="Sector Image" width={400} height={500} className="rounded-2xl shadow-2xl" />
                             </div>
                             <div className="w-full h-full absolute top-0 -left-2 px-12 py-4">
-                                <RenderSector parcelas={sector} special={sectorName === 'Sector E'} reversed={sector.bottomLimiter === 'Calle Los Pinos'} setParcelaData={setParcelaSelected} />
+                                <RenderSector parcelas={sector} special={sectorName === 'Sector E'} reversed={sector.bottomLimiter === 'Calle Los Pinos'} setParcelaData={setParcelaSelected} selectedParcela={parcelaSelected} />
                             </div>
                         </div>
 
@@ -227,68 +225,15 @@ const Sector = ({ sectorName, sector }: { sectorName: string, sector: ParcelaDat
                                 <span className="font-montserrat">{parcelaSelected.numero}</span>
                             </div>
                             <ParcelaDatadisplay label="Fracción" value={parcelaSelected.fraccion} />
-                            <ParcelaDatadisplay label="Metros Cuadrados" value={`${parcelaSelected.metrosCuadrados} m²`}  />
+                            {parcelaSelected.metrosCuadrados && <ParcelaDatadisplay label="Metros Cuadrados" value={`${parcelaSelected.metrosCuadrados} m²`}  />}
                             <ParcelaDatadisplay label="Estado" value={parcelaSelected.status} />
 
                         </div>
                     }
-                    {/* <div className="flex flex-col px-8 gap-4">
-
-                        {sector &&
-                            allParcelas.map(parcelita => (
-                                <CollapsableParcela key={parcelita.numero} parcel={parcelita} />
-                            ))
-                        }
-                    </div> */}
+                    
                 </div>
             </div>
         </div>
-    )
-}
-
-const CollapsableParcela = ({ parcel }: { parcel: ParcelaType }) => {
-    const [isExpanded, setIsExpanded] = useState<boolean>(false);
-    const toggleExpand = () => {
-        return setIsExpanded(!isExpanded);
-    }
-
-
-    return (
-        <div className="flex flex-col justify-start items-start">
-            <div onClick={toggleExpand} className={`w-full p-4 border ${parcel.status === 'Vendido' ? 'border-l-6 border-l-accent' : 'border-l-6 border-l-primary'} ${isExpanded && parcel.status === 'Vendido' ? 'bg-yellow-100! border-b-0! rounded-b-none! ' : isExpanded && parcel.status === 'Disponible' ? 'bg-green-100! border-b-0! rounded-b-none!' : ''} border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-row justify-between items-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg`}>
-                <div className="flex flex-col items-start justify-start">
-                    <h2 className="tracking-wide text-xs font-regular text-gray-500 font-inter">Parcela</h2>
-                    <h3 className="font-bold font-montserrat text-lg">{parcel.numero}</h3>
-                </div>
-                <span className="material-symbols-outlined">
-                    {!isExpanded ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
-                </span>
-                {/* <div className={`w-3 h-3 rounded-full ${parcel.status === 'Vendido' ? 'bg-yellow-300 shadow-yellow-800 shadow-lg' : 'bg-green-400 shadow-green-800 shadow-lg'}`} /> */}
-            </div>
-            {isExpanded && (
-                <div className={`px-4 py-4 border-t border-gray-100  rounded-b-2xl w-full max-h-96 overflow-y-auto ${parcel.status === 'Vendido' ? 'bg-yellow-100 border-l-6 border-l-accent' : 'bg-green-100 border-l-6 border-l-primary'}`}>
-                    <div className="grid grid-cols-1 gap-2">
-                        <div className="flex flex-row items-center justify-start gap-2">
-                            <span className="font-bold text-sm">Parcela:</span>
-                            <h3 className="text-sm">{parcel.numero}</h3>
-                        </div>
-                        <div className="flex flex-row items-center justify-start gap-2">
-                            <span className="font-bold text-sm">Medida:</span>
-                            <h3 className="text-sm">{parcel.metrosCuadrados} M²</h3>
-                        </div>
-                        <div className="flex flex-row items-center justify-start gap-2">
-                            <span className="font-bold text-sm">Estado:</span>
-                            <h3 className="font-bold text-sm">{parcel.status}</h3>
-                        </div>
-                        <div className="flex flex-row items-center justify-start gap-2">
-                            <span className="font-bold text-sm">Fracción:</span>
-                            <h3 className="text-sm">{parcel.fraccion}</h3>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-
     )
 }
 

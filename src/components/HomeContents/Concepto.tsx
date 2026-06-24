@@ -20,9 +20,9 @@ export default function Concepto() {
                     </p>
                 </Reveal>
             </div>
-            <div className="w-100 md:w-full h-auto rounded-lg overflow-hidden flex flex-row md:justify-end">
+            <div className="w-full h-auto rounded-lg overflow-hidden flex justify-center md:justify-end">
                 <Reveal variant="slideRight" delay={0.1}>
-                    <Image src="/fincas_img.jpg" alt="Imagen de concepto" width={800} height={600} className="w-[300px] lg:w-[500px] object-cover rounded-lg" />
+                    <Image src="/fincas_img.jpg" alt="Imagen de concepto" width={800} height={600} className="w-full max-w-[300px] lg:max-w-[500px] object-cover rounded-lg" />
                 </Reveal>
             </div>
         </section>

@@ -17,4 +17,5 @@ export const Concepto = new Link('Concepto', '/#concepto');
 export const Parcelas = new Link('Parcelas', '/#parcelas');
 export const Caracteristicas = new Link('Infraestructura', '/#caracteristicas');
 export const Galeria = new Link('Galería', '/#galeria');
-export const Ubicacion = new Link ('Ubicación', '/#ubicacion')
+export const Ubicacion = new Link ('Ubicación', '/#ubicacion');
+export const Contacto = new Link('Contacto', '/#contacto');

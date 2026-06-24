@@ -17,7 +17,6 @@ type ImageProps = {
 const Galeria = () => {
     const is3xl: boolean = useMediaQuery('(min-width: 1600px');
     const isMd: boolean = useMediaQuery('(min-width: 1200px)');
-    const isMobile: boolean = useMediaQuery('max-width: 480px');
     const limit = is3xl ? 8 : isMd ? 8 : 6
     const { images, loading } = useImages(limit);
 
@@ -33,7 +32,7 @@ const Galeria = () => {
                 {!loading &&
                     images?.map((image, index) => {
                         return (
-                            <Reveal variant='slideLeft' delay={index * 0.1} key={index} >
+                            <Reveal variant="fadeIn" delay={index * 0.1} key={index} >
                                 <ImageCard src={image.link} alt={image.title} height={400} width={400} />
                             </Reveal>
                         )
@@ -58,15 +57,16 @@ const ImageCard = ({ src, alt, width, height }: ImageProps) => {
         setZoomed(false);
     }
     return (
-        <>
+        <div className="w-full">
             <div className="w-72 h-72 2xl:w-80 2xl:h-80 relative group cursor-pointer rounded-xl overflow-hidden" onClick={handleOpen}>
                 <Image src={src} alt={alt} width={width} height={height} className="w-72 h-72 2xl:w-80 2xl:h-80 3xl:w-100 3xl:h-100  absolute object-cover inset-0 rounded-2xl group-hover:scale-105 transition-all duration-300" />
             </div>
             <Backdrop sx={(theme) => ({
-                zIndex: theme.zIndex.drawer + 1
+                zIndex: theme.zIndex.drawer + 1,
+                width: '100%'
             })} open={open} onClick={handleClose}>
                 <div
-                    className="w-4xl h-3xl"
+                    className="w-[90%] lg:w-1/2 flex justify-center items-center h-3xl"
                     onClick={(event) => {
                         event.stopPropagation();
                         setZoomed((prev) => !prev);
@@ -85,11 +85,11 @@ const ImageCard = ({ src, alt, width, height }: ImageProps) => {
                         alt={alt}
                         width={width}
                         height={height}
-                        className={`w-full h-full object-contain transition-transform duration-300 ${zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'}`}
+                        className={`w-[90%]! h-full object-contain transition-transform duration-300 ${zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'}`}
                     />
                 </div>
             </Backdrop>
-        </>
+        </div>
     )
 }
 export default Galeria;

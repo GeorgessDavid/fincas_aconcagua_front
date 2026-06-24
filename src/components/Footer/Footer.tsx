@@ -33,8 +33,8 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col items-center lg:items-start justify-start gap-2 text-center">
                     <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Información</h2>
-                    <Link href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Terminos y Condiciones</Link>
-                    <Link href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Política de Privacidad</Link>
+                    {/* <Link href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Terminos y Condiciones</Link> */}
+                    {/* <Link href="#" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Política de Privacidad</Link> */}
                     <Link href="/#contacto" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Contacto</Link>
                     <Link href="/#concepto" className="text-white text-lg font-montserrat hover:text-white/50 transition-colors duration-200">Sobre Nosotros</Link>
                 </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
             <Divider variant="middle" sx={{ backgroundColor: '#ffffff40' }} />
             <div className="w-full flex items-center justify-center py-4">
-                <span className="text-white/60 text-xs mx-4 lg:text-md text-center font-montserrat">Todos los derechos reservados © 2026 - Fincas de Aconcagua</span>
+                <span className="text-white/60 text-xs mx-4 lg:text-md text-center font-montserrat whitespace-normal">Todos los derechos reservados © 2026 - Fincas de Aconcagua</span>
             </div>
         </footer>
     )

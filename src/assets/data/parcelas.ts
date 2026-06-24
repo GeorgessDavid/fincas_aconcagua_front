@@ -1,6 +1,6 @@
 export type ParcelaType = {
     numero: string;
-    metrosCuadrados: number;
+    metrosCuadrados?: number;
     status: 'Vendido' | 'Disponible';
     forma: 'rectangle' | 'square';
     fraccion: 1 | 2;
@@ -19,11 +19,11 @@ export type ParcelaData = {
 
 class Parcela implements ParcelaType {
     numero: string;
-    metrosCuadrados: number;
+    metrosCuadrados: number | undefined;
     status: 'Vendido' | 'Disponible';
     forma: 'rectangle' | 'square';
     fraccion: 1 | 2;
-    constructor(numero: string, metrosCuadrados: number, status: 'Vendido' | 'Disponible', forma: 'rectangle' | 'square', fraccion: 1 | 2) {
+    constructor(numero: string, metrosCuadrados: number | undefined, status: 'Vendido' | 'Disponible', forma: 'rectangle' | 'square', fraccion: 1 | 2) {
         this.numero = numero;
         this.metrosCuadrados = metrosCuadrados;
         this.status = status;
@@ -123,7 +123,6 @@ export const PARCELAS_SECTOR_B: ParcelaData = {
     izquierda: [
         {
             numero: '28',
-            metrosCuadrados: 1072.34,
             status: 'Vendido',
             forma: 'rectangle',
             fraccion: 1
@@ -153,14 +152,12 @@ export const PARCELAS_SECTOR_B: ParcelaData = {
         },
         {
             numero: '21',
-            metrosCuadrados: 1018.57,
             status: 'Vendido',
             forma: 'rectangle',
             fraccion: 1
         },
         {
             numero: '22',
-            metrosCuadrados: 1018.57,
             status: 'Vendido',
             forma: 'rectangle',
             fraccion: 1
@@ -196,7 +193,6 @@ export const PARCELAS_SECTOR_C: ParcelaData = {
         },
         {
             numero: '17',
-            metrosCuadrados: 1032.13,
             status: 'Vendido',
             forma: 'rectangle',
             fraccion: 1
@@ -269,7 +265,7 @@ export const PARCELAS_SECTOR_D: ParcelaData = {
         },
         {
             numero: '06',
-            metrosCuadrados: 1026.80,
+            metrosCuadrados: 1078.12,
             status: 'Disponible',
             forma: 'rectangle',
             fraccion: 1
@@ -280,7 +276,7 @@ export const PARCELAS_SECTOR_D: ParcelaData = {
         new Parcela('02', 1083.56, 'Disponible', 'rectangle', 1),
         new Parcela('03', 1030.77, 'Disponible', 'rectangle', 1),
         new Parcela('04', 1029.60, 'Disponible', 'rectangle', 1),
-        new Parcela('05', 1078.12, 'Disponible', 'rectangle', 1),
+        new Parcela('05', 1079.87, 'Disponible', 'rectangle', 1),
     ]
 }
 
@@ -291,17 +287,17 @@ export const PARCELAS_SECTOR_E: ParcelaData = {
     leftLimiter: 'Calle Aconcagua',
     rightLimiter: 'Manzana 6',
     izquierda: [
-        new Parcela('35', 1000.40, 'Disponible', 'rectangle', 2),
-        new Parcela('36', 1000.40, 'Disponible', 'rectangle', 2)
+        new Parcela('35', 1000.4, 'Disponible', 'rectangle', 2),
+        new Parcela('36', 1000.4, 'Disponible', 'rectangle', 2)
     ],
     derecha: [
-        new Parcela('31', 1000.40, 'Disponible', 'rectangle', 2),
-        new Parcela('30', 1000.40, 'Disponible', 'rectangle', 2)
+        new Parcela('31', 1060.8, 'Disponible', 'rectangle', 2),
+        new Parcela('30', 1054.56, 'Disponible', 'rectangle', 2)
     ],
     center: [
-        new Parcela('34', 1000.40, 'Disponible', 'square', 2),
-        new Parcela('33', 1000.40, 'Disponible', 'square', 2),
-        new Parcela('32', 1000.40, 'Disponible', 'square', 2),
+        new Parcela('34', 1160.18, 'Disponible', 'square', 2),
+        new Parcela('33', 1201.20, 'Disponible', 'square', 2),
+        new Parcela('32', 1160.18, 'Disponible', 'square', 2),
     ]
 }
 
@@ -312,7 +308,7 @@ export const PARCELAS_SECTOR_F: ParcelaData = {
     leftLimiter: 'Manzana 5',
     rightLimiter: 'Manzana 7',
     center: [
-        new Parcela('25', 1018.54, 'Vendido', 'square', 2),
+        new Parcela('25', undefined, 'Vendido', 'square', 2),
         new Parcela('24', 1163.12, 'Disponible', 'square', 2),
         new Parcela('23', 1110.94, 'Disponible', 'square', 2),
     ],

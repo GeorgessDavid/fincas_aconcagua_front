@@ -9,6 +9,7 @@ type BenefitProps = {
 }
 
 export default function Beneficios() {
+
     return (
         <section className="px-4 md:px-8 lg:px-24 relative w-full flex flex-col items-center justify-center gap-8 bg-zinc-100 py-28" id="caracteristicas">
             <Reveal variant="fadeUp" delay={0.1}>
@@ -24,14 +25,14 @@ export default function Beneficios() {
                 <Reveal variant="fadeUp" delay={0.28}>
                     <BenefitsCard benefit={{ icon: 'forest', title: 'Entorno natural', description: 'Un ambiente tranquilo, rodeado de verde, ideal para quienes buscan alejarse del ritmo urbano sin perder conexión.' }} />
                 </Reveal>
-                <Reveal variant="slideRight" delay={0.3} >
-                    <BenefitsCard benefit={{ icon: 'road', title: 'Acceso pavimentado', description: 'Acceso fácil y cercano a 2km desde RP. 26.' }} />
+                <Reveal variant='slideRight' delay={0.3} >
+                    <BenefitsCard benefit={{ icon: 'road', title: 'Acceso pavimentado', description: 'Acceso directo y cómodo por RP. 26 y Calle Aconcagua, ambas pavimentadas.' }} />
                 </Reveal>
-                <Reveal variant="slideLeft" delay={0.35}>
+                <Reveal variant='slideLeft' delay={0.35}>
                     <BenefitsCard benefit={{ icon: 'light', title: 'Alumbrado público', description: 'Infraestructura confiable con tendido eléctrico de media y baja tensión (EDENOR).' }} />
                 </Reveal>
                 <Reveal variant="fadeUp" delay={0.3}>
-                    <BenefitsCard benefit={{ icon: 'fence', title: 'Cercado perimetral', description: 'Delimitación clara del predio, aportando orden, estructura y privacidad al desarrollo.' }} />
+                    <BenefitsCard benefit={{ icon: 'money_off', title: 'Menores costos', description: 'Un barrio abierto que permite disfrutar de tu hogar sin pagar expensas mensuales.' }} />
                 </Reveal>
                 <Reveal variant="slideRight" delay={0.34}>
                     <BenefitsCard benefit={{ icon: 'trending_up', title: 'Proyección de crecimiento', description: 'Una oportunidad para quienes buscan construir a futuro o invertir en una zona residencial en evolución.' }} />

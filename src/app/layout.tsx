@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@24,400" />
         <link rel="icon" href="/fincas_web_tab_logo.png" />
       </head>
-      <body className="min-h-screen flex flex-col overflow-x-hidden!">
+      <body className="min-h-screen max-w-full flex flex-col overflow-x-hidden!">
         <Header />
         <ToastContainer autoClose={5000} theme='dark' />
         <ThemeRegistry>
