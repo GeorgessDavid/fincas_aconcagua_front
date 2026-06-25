@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Noto_Serif, Inter, Ubuntu } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import { ThemeRegistry } from '@/lib/mui/ThemeRegistry';
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -30,11 +31,91 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Fincas de Aconcagua",
-  description: "Fincas de Aconcagua",
-  icons: {
-    icon: "/fincas_web_tab_logo.png",
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.companyName }],
+  creator: siteConfig.companyName,
+  publisher: siteConfig.companyName,
+  category: "real estate",
+  classification: "Desarrollo inmobiliario residencial",
+  referrer: "origin-when-cross-origin",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "es-AR": "/",
+      es: "/",
+      "x-default": "/",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: absoluteUrl("/"),
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    countryName: "Argentina",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 3484,
+        height: 3000,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: siteConfig.icon, type: "image/png" }],
+    shortcut: siteConfig.icon,
+    apple: [{ url: siteConfig.icon, type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: siteConfig.name,
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
+  ],
+  colorScheme: "light",
 };
 
 export default function RootLayout({
