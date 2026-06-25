@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --text-primary: #005725;
+  --text-black: #101219;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-noto-serif: 'Noto-serif', serif;
+  --font-inter: 'Inter', sans-serif;
+  --background: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-primary: var(--text-primary);
+  --color-main-black: var(--text-black);
+  --color-secondary-black: #212529;
+  --color-tertiary: #94d4b6;
+  --color-accent: #dca613;
+  --font-montserrat: var(--font-montserrat);
+  --font-noto-serif: var(--font-noto-serif);
+  --font-inter: var(--font-inter);
+  --font-ubuntu: 'Ubuntu', sans-serif;
+  --breakpoint-3xl: 1720px;
+  --breakpoint-2xl: 1367px;
+  --breakpoint-xl: 1300px;
+  --breakpoint-xxxs: 372px;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-montserrat);
+}
+
+.MuiTypography-root {
+  font-family: var(--font-montserrat) !important;
+}
+
+.Toastify__toast{
+  background-color: #212529 !important;
+}
