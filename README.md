@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fincas de Aconcagua Front
 
-## Getting Started
+Frontend institucional de **Fincas de Aconcagua**, un desarrollo residencial de parcelas en Ingeniero Maschwitz, Buenos Aires. La aplicación está construida con Next.js y expone una landing orientada a presentación comercial, captación de consultas y visibilidad SEO.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js 16 + React 19
+- TypeScript
+- Material UI + Emotion
+- Tailwind CSS 4
+- Framer Motion
+- React Hook Form
+- React Toastify
+
+## Funcionalidades
+
+- Landing principal con secciones de hero, concepto, parcelas, beneficios, galería, ubicación y contacto.
+- Integración con API externa para:
+  - envío de formularios de contacto (`POST /contact`)
+  - carga de imágenes de galería (`GET /images?max=...`)
+- Configuración SEO centralizada en `src/lib/seo.ts`
+- Generación de `sitemap.xml`, `robots.txt` y `manifest.webmanifest`
+- Metadatos Open Graph, Twitter Cards e íconos para compartición y PWA básica
+
+## Requisitos
+
+- Node.js 20 o superior
+- pnpm, npm, yarn o bun
+
+## Variables de entorno
+
+Crear un archivo `.env` con valores como estos:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3002
+NEXT_PUBLIC_SITE_URL=https://www.fincasdeaconcagua.com.ar
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variables usadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `NEXT_PUBLIC_API_URL`: base URL del backend consumido por contacto e imágenes.
+- `NEXT_PUBLIC_SITE_URL`: URL pública del sitio usada para canonical, Open Graph, sitemap y robots.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Desarrollo local
 
-## Learn More
+Instalación de dependencias:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Servidor de desarrollo:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm dev
+```
 
-## Deploy on Vercel
+La aplicación quedará disponible en `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `pnpm dev`: inicia el entorno de desarrollo
+- `pnpm build`: genera la build de producción
+- `pnpm start`: levanta la build generada
+- `pnpm lint`: ejecuta ESLint
+
+## Estructura principal
+
+```text
+src/
+  app/                App Router, metadata, sitemap, robots y manifest
+  components/         UI del sitio y secciones de la home
+  hooks/              Integraciones cliente con la API
+  lib/                SEO y configuración de MUI
+  page-contents/      Composición de páginas
+public/               Assets e imágenes públicas
+```
+
+## SEO y despliegue
+
+- La configuración base del sitio vive en `src/lib/seo.ts`.
+- `src/app/sitemap.ts` genera el sitemap principal.
+- `src/app/robots.ts` publica las reglas de indexación y la URL del sitemap.
+- `src/app/manifest.ts` define el manifiesto web.
+
+Para producción, asegurá que `NEXT_PUBLIC_SITE_URL` apunte al dominio final del sitio y que `NEXT_PUBLIC_API_URL` apunte al backend público.
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Ver [LICENSE](./LICENSE).
