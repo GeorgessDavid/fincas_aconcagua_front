@@ -52,7 +52,7 @@ const Contacto = () => {
                     <div className="flex flex-col mt-8 gap-6">
                         <div className="flex justify-start gap-6">
                             <span className="material-symbols-outlined text-primary!">location_on</span>
-                            <span className="font-inter">Aconcagua 450, Maquinista Savio, Buenos Aires.</span>
+                            <span className="font-inter">Aconcagua 450, Ingeniero Maschwitz, Buenos Aires.</span>
                         </div>
                         <div className="flex justify-start gap-6">
                             <span className='material-symbols-outlined text-primary!'>mail</span>
