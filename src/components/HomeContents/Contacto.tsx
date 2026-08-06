@@ -43,7 +43,7 @@ const Contacto = () => {
 
 
     return (
-        <section className="w-full flex flex-col gap-4  lg:flex-row justify-around lg:justify-between bg-zinc-50 py-24 px-8 2xl:py-32 2xl:px-28" id="contacto">
+        <section className="w-full flex flex-col gap-4  lg:flex-row justify-around lg:justify-between bg-zinc-50 py-24 px-8  2xl:py-32 xl:px-32 2xl:px-28" id="contacto">
             <Reveal variant="slideLeft" delay={0.1}>
                 <div className="flex flex-col items-start max-w-3xl gap-6">
                     <h2 className="font-inter tracking-widest font-bold text-xl uppercase text-primary">Contacto</h2>
