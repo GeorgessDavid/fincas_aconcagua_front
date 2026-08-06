@@ -15,7 +15,7 @@ export default function MapaParcelas() {
 
     return (
         <>
-            <div className="relative hidden lg:block w-full border-32 rounded-2xl border-gray-200 shadow-sm " >
+            <div className="relative hidden lg:block w-full max-w-[1180px] mx-auto border-32 rounded-2xl border-gray-200 shadow-sm " >
                 <Image src="/fincas_air_2026.png" alt="Fincas" width={1920} height={1080} />
                 <span className="absolute -top-7 left-1/2 -translate-x-1/2 font-bold text-black shadow-sm">
                     Calle Charrúa
@@ -30,7 +30,7 @@ export default function MapaParcelas() {
                     Calle Felipe Flynt
                 </span>
             
-                <div className="absolute top-8 grid w-full xl:h-[35%] 3xl:h-[45%]" style={{ gridTemplateColumns: gridColumns  }}>
+                <div className="absolute top-8 grid w-full xl:h-[35%]" style={{ gridTemplateColumns: gridColumns  }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_A} />
                     <div />
@@ -41,7 +41,7 @@ export default function MapaParcelas() {
                     <RenderSector parcelas={PARCELAS_SECTOR_D} />
                     <div />
                 </div>
-                <div className="absolute bottom-4 3xl:bottom-8 grid 3xl:h-[40%] w-full" style={{ gridTemplateColumns: gridColumns }}>
+                <div className="absolute bottom-4 grid w-full" style={{ gridTemplateColumns: gridColumns }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_E} reversed special />
                     <div></div>
