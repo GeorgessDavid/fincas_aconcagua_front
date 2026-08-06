@@ -39,6 +39,18 @@ body {
   font-family: var(--font-montserrat) !important;
 }
 
-.Toastify__toast{
+.Toastify__toast {
   background-color: #212529 !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1367px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1368px) {
+  html {
+    font-size: 13.5px;
+  }
 }

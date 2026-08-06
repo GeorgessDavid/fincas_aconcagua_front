@@ -2,17 +2,20 @@
 import { PARCELAS_SECTOR_A, PARCELAS_SECTOR_B, PARCELAS_SECTOR_C, PARCELAS_SECTOR_D, PARCELAS_SECTOR_E, PARCELAS_SECTOR_F, PARCELAS_SECTOR_G, PARCELAS_SECTOR_H, ParcelaData } from "@/assets/data/parcelas";
 import Parcela, { ParcelaDatadisplay } from "./Parcela";
 import Image from 'next/image';
-import { Divider } from '@mui/material';
+import { Divider, useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import { ParcelaType } from "@/assets/data/parcelas";
 
 
 export default function MapaParcelas() {
+    const isHd: boolean = useMediaQuery('(min-width:1919px)');
+    const gridColumns: string = isHd ?'2% 20.5% 4.5% 20.5% 4% 20.5% 4% 20.5% 2.25%' : '2% 20.5% 4.5% 20.5% 4% 20.5% 4% 20.5% 2.25%';
 
+    // Template grid columns anteriores: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%'
 
     return (
         <>
-            <div className="relative hidden lg:block w-full border-32 rounded-2xl border-gray-200 shadow-sm " >
+            <div className="relative hidden lg:block w-full max-w-[1180px] mx-auto border-32 rounded-2xl border-gray-200 shadow-sm " >
                 <Image src="/fincas_air_2026.png" alt="Fincas" width={1920} height={1080} />
                 <span className="absolute -top-7 left-1/2 -translate-x-1/2 font-bold text-black shadow-sm">
                     Calle Charrúa
@@ -27,7 +30,7 @@ export default function MapaParcelas() {
                     Calle Felipe Flynt
                 </span>
             
-                <div className="absolute top-8 grid w-full xl:h-[35%] 3xl:h-[44%]" style={{ gridTemplateColumns: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%' }}>
+                <div className="absolute top-8 grid w-full xl:h-[35%]" style={{ gridTemplateColumns: gridColumns  }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_A} />
                     <div />
@@ -38,7 +41,7 @@ export default function MapaParcelas() {
                     <RenderSector parcelas={PARCELAS_SECTOR_D} />
                     <div />
                 </div>
-                <div className="absolute bottom-4 3xl:bottom-8 grid 3xl:h-[44%] w-full" style={{ gridTemplateColumns: '1% 22.5% 2.25% 22.5% 2.25% 22.5% 2.25% 22.5% 1.25%' }}>
+                <div className="absolute bottom-4 grid w-full" style={{ gridTemplateColumns: gridColumns }}>
                     <div />
                     <RenderSector parcelas={PARCELAS_SECTOR_E} reversed special />
                     <div></div>

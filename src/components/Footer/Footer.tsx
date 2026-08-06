@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="w-full h-full flex flex-col-reverse gap-16 lg:flex-row items-center lg:items-start lg:gap-8 justify-between px-8 py-12 2xl:px-64 py-32">
                 <div className="flex flex-col items-center lg:items-start justify-start gap-2 text-center">
                     <h2 className="text-white text-xl font-montserrat font-bold uppercase tracking-widest">Fincas de Aconcagua</h2>
-                    <span className="text-white/80 text-md italic font-noto-serif">Viví la tranquilidad que te merecés</span>
+                    <span className="text-white/80 text-md italic font-noto-serif">Viví la tranquilidad que merecés</span>
                     <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-start lg:items-center lg:gap-2">
                         <p className="text-white text-lg font-montserrat">Un proyecto de </p>
                         <span className="font-bold text-white text-lg">Urbanizadora Tres Pinos S.A. </span>
