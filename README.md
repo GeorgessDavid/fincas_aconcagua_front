@@ -1,4 +1,4 @@
-# Fincas de Aconcagua Front
+# Fincas de Aconcagua
 
 Frontend institucional de **Fincas de Aconcagua**, un desarrollo residencial de parcelas en Ingeniero Maschwitz, Buenos Aires. La aplicación está construida con Next.js y expone una landing orientada a presentación comercial, captación de consultas y visibilidad SEO.
 
